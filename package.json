@@ -1,6 +1,6 @@
 {
   "name": "githubpage",
-  "homepage": "http://talk2frank.github.io/githubpages",
+  "homepage": "https://talk2frank.github.io/githubpages/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
