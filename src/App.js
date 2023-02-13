@@ -1,6 +1,5 @@
-import logo from './images/FKgif.gif';
-import linkdin from './images/linkedin.png';
 import './App.css';
+import icons from './images/imgindex.js'
 
 
 function App() {
@@ -8,12 +7,15 @@ function App() {
   return (
     <div className="App">
    
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className='Header-text'>
-         Site developed in <a href='https://reactjs.org/'>React</a> under construction
-        </h1>
-      </header>
+      <div className="App-banner">
+        <img src={icons.fkicon} className="App-logo" alt="logo" />
+        <div className='Bannerspace'>
+          <h1 className='Header-text'>
+          Site developed in <a href='https://reactjs.org/'>React</a>
+          </h1>
+          <p className='Header-subtext'>*currently under construction*</p>
+        </div>
+      </div>
 
       <body className='App-body'>
         <h2 className='Header2-text'>
@@ -28,9 +30,8 @@ function App() {
 
       <footer className='App-footer'>
         <a href='https://www.linkedin.com/in/frank-kinsey/'>
-          <img src={linkdin} alt="LinkedIn" className='App-icon'>
+          <img src={icons.linkedin} alt="LinkedIn" className='App-icon'>
           </img>
-
         </a>
         <p className='App-tagline'>
           Site created by Frank Kinsey 2023

@@ -14,23 +14,39 @@ a:hover{
   background-color: #737986;
 }
 
-.App-header {
+.App-banner {
+  display: flex;
+  flex-direction: row;
   background-color: #282c34;
   padding: 16px;
-  align-items:flex-start;
-  justify-content: flex-start;
+  align-items:center;
+  justify-items: center;
 }
 
 .App-logo {
-  height: calc(100px + 10vmin);;
+  height: calc(100px + 10vmin);
+  padding: 6px;
   max-height: 200px;
   pointer-events: none;
+}
+
+.Bannerspace{
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .Header-text{
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.Header-subtext{
+  font-size: calc(6px + 2vmin);
+  color: white;
+}
+
+
 
 
 .App-body{
@@ -65,13 +81,12 @@ a:hover{
 
 .App-icon{
   height: 40px;
+  padding: 0px 8px 0px 8px;
 }
 
 .App-tagline{
- 
-  padding: 0px 8px 0px 8px;
+  padding: 0px 8px 0px 0px;
   font-size: 12px;
-  
 }
 
 
