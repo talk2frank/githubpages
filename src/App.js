@@ -10,8 +10,11 @@ function App() {
       <div className="App-banner">
         <img src={icons.fkicon} className="App-logo" alt="logo" />
         <div className='Bannerspace'>
-          <h1 className='Header-text'>
-          Site developed in <a href='https://reactjs.org/'>React</a>
+          <h1 className='Header-text'>Site developed in <a href='https://reactjs.org/'>React</a>
+            <a href='https://reactjs.org/'>
+              <img src={icons.react} alt="React" className='App-icon'>
+              </img>
+            </a>
           </h1>
           <p className='Header-subtext'>*currently under construction*</p>
         </div>
@@ -22,9 +25,15 @@ function App() {
           Please be patient
         </h2>
         <p className='Body-text'>
-          I'm not even sure what I'll do yet.<br></br>
-          It may take a while<br></br>
-          Please don't wait up
+          Welcome to my site which is a work in progress<br></br>
+          Ultimately this is an alternative to my GitHub profile page
+        </p>
+        <span></span>
+        <p className='Body-text'>To see my profile page visit <a href='https://github.com/talk2frank'>GitHub</a>
+            <a href='https://github.com/talk2frank'>
+              <img src={icons.github} alt="GitHub" className='App-icon'>
+              </img>
+            </a>
           </p>
       </body>
 
