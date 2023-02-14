@@ -8,7 +8,7 @@ function App() {
     <div className="App">
    
       <div className="App-banner">
-        <img src={icons.fkicon} className="App-logo" alt="logo" />
+        <img src={icons.me} className="App-profilepic" alt="Profile Pic" />
         <div className='Bannerspace'>
           <h1 className='Header-text'>Site developed in <a href='https://reactjs.org/'>React</a>
             <a href='https://reactjs.org/'>
@@ -22,7 +22,7 @@ function App() {
 
       <body className='App-body'>
         <h2 className='Header2-text'>
-          Please be patient
+          Frank Kinsey;: GitHub Pages site
         </h2>
         <p className='Body-text'>
           Welcome to my site which is a work in progress<br></br>
