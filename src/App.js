@@ -1,6 +1,6 @@
 import './App.css';
 import icons from './images/imgindex.js'
-
+import Footer from './components/components';
 
 function App() {
 
