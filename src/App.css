@@ -1,3 +1,5 @@
+/*General Styling*/
+
 a{
   color: rgb(52, 180, 227);
   
@@ -6,6 +8,7 @@ a:hover{
   color: rgb(176, 211, 223);  
 }
 
+/*App level styling*/
 
 .App{
   display: flex;
@@ -13,6 +16,13 @@ a:hover{
   height: 100vh;
   background-color: #737986;
 }
+
+.App-icon{
+  height: 40px;
+  padding: 0px 8px 0px 8px;
+}
+
+/*Banner styling*/
 
 .App-banner {
   display: flex;
@@ -23,31 +33,31 @@ a:hover{
   justify-items: center;
 }
 
-.App-profilepic {
+.AppBanner-profilepic {
   height: calc(100px + 10vmin);
   padding: 6px;
   max-height: 200px;
   pointer-events: none;
 }
 
-.Bannerspace{
+.AppBanner-space{
   padding: 8px;
   display: flex;
   flex-direction: column;
 }
 
-.Header-text{
+.AppBanner-header{
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.Header-subtext{
+.AppBanner-subtext{
   font-size: calc(6px + 2vmin);
   color: white;
 }
 
 
-
+/*Body styling*/
 
 .App-body{
   background-color: #737986;
@@ -56,16 +66,17 @@ a:hover{
   justify-content: flex-start;
 }
 
-.Header2-text{
+.AppBody-header{
   font-size: calc(10px + 2vmin);
   color: rgb(45, 43, 43);
 }
 
-.Body-text{
-  font-size: calc(6px + 2vmin);
+.AppBody-text{
+  font-size: calc(4px + 2vmin);
   color: white;
 }
 
+/*Footer styling*/
 
 .App-footer{
   display:flex;
@@ -79,13 +90,7 @@ a:hover{
   bottom: 0;
 }
 
-.App-icon{
-  height: 40px;
-  padding: 0px 8px 0px 8px;
-}
-
-.App-tagline{
-  padding: 0px 8px 0px 0px;
+.AppFooter-tagline{
   font-size: 12px;
 }
 
