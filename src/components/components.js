@@ -28,6 +28,8 @@ export function MyBanner(){
     )
 }
 
+/* TODO update to a dynamic data field?
+*/
 export function HomePage(){
     return(
         <body className='App-body'>
