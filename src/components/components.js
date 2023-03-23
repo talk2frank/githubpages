@@ -9,7 +9,8 @@
  */
 
 import icons from '../images/imgindex.js';
-import { profileData } from '../data/data.js';
+import { employerData, profileData } from '../data/data.js';
+
 
 
 export function MyBanner(){
@@ -18,6 +19,7 @@ export function MyBanner(){
         <img src={icons.me} className="AppBanner-profilepic" alt="Profile Pic" />
         <div className='AppBanner-space'>
             <h1 className='AppBanner-header'>Frank Kinsey</h1>
+            <body className='AppBody-text'>Welcome to my site</body>
             <h2 className='AppBanner-subtext'> 
             Site developed in <a href='https://reactjs.org/'>React</a>
             <a href='https://reactjs.org/'>
@@ -29,24 +31,16 @@ export function MyBanner(){
     )
 }
 
-/* TODO update to a dynamic data field?
-*/
-/*
-export function Profile(){
-    return(
-        <body className='App-body'>
-          <h2 className='AppBody-header'>
-            Welcome to my GitHub Pages site
-          </h2>
-          <p className='AppBody-text'>
-            Welcome to my site which is a work in progress<br></br>
-            Ultimately this is an alternative to my GitHub profile page
-          </p>
-          <span></span>
-      </body>
-    )
-}
-*/
+export function Profile({ name, bio, keyskills}){
+  if (!name) return <div />;
+  return (
+    <div>
+      <h2 className='AppBody-header'>{name}</h2>
+      <h5 className='AppBody-text'>{bio}</h5>
+      <h5 className='AppBody-text'>{keyskills}</h5>  
+    </div>
+  );
+};
 
 export function ProfileContainer(){
   return(
@@ -69,37 +63,33 @@ export function ProfileContainer(){
   )
 }
 
-export function Profile({ name, bio, keyskills}){
-  if (!name) return <div />;
+//class for a job
+export function Job({job}){
+  if (!job) return <div/>;
   return (
-    <div>
-      <h2 className='AppBody-header'>{name}</h2>
-      <h5 className='AppBody-text'>{bio}</h5>
-      <h5 className='AppBody-text'>{keyskills}</h5>  
-    </div>
+    <li className='emplist'>
+      <h4 className='AppBody-header'>{job.role}</h4>
+      <h6 className='AppBody-text'>{job.employer}</h6>
+      <h5 className='AppBody-text'>{job.period}</h5>
+      <h5 className='AppBody-text'>{job.skills}</h5>
+      <body className='AppBody-text'>{job.description}</body>  
+    </li>
   );
 };
 
-
-export function Employment({data:{trainer,course,period,description}}){
-  if (!trainer) return <div>WHERE IS IT?</div>;
+//list of jobs why no worky?
+export function Jobs(){
+  if (!employerData) return <div/>;
   return (
-    <div>
-      <h2 className='AppBody-header'>{trainer}</h2>
-      <h5 className='AppBody-text'>{course}</h5>
-      <h5 className='AppBody-text'>{period}</h5>
-      <h5 className='AppBody-text'>{description}</h5>
-    </div>
+    <ul className='emplistcont'>
+      {employerData.map((job,i)=>{
+        return(
+        <Job  job={job}></Job>
+        );
+      })}
+    </ul>
   );
 };
-
-//need to build this?
-export function EmploymentContainer(){
-  return(
-    <h1>testing</h1>
-  )
-};
-      
 
 
 export function MyFooter(){

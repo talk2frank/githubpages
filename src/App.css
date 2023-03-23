@@ -23,8 +23,12 @@ td {
 .App{
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background-color: #737986;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.AppContent{
+  flex-grow: 1;
 }
 
 .App-icon{
@@ -37,10 +41,11 @@ td {
 .App-banner {
   display: flex;
   flex-direction: row;
-  background-color: #282c34;
+  background-color: #c4c5c8;
   padding: 16px;
   align-items:center;
   justify-items: center;
+  
 }
 
 .AppBanner-profilepic {
@@ -70,7 +75,7 @@ td {
 /*Body styling*/
 
 .App-body{
-  background-color: #737986;
+  background-color: #e6e6e6;
   padding: 16px;
   align-items:flex-start;
   justify-content: flex-start;
@@ -83,7 +88,7 @@ td {
 
 .AppBody-text{
   font-size: calc(4px + 2vmin);
-  color: white;
+  color: rgb(104, 103, 103);
 }
 
 /*Footer styling*/
@@ -91,24 +96,32 @@ td {
 .App-footer{
   display:flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content:center;
   align-items: center;
   background-color: white;
   height: 55px;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
 }
 
 .AppFooter-tagline{
-  font-size: 12px;
+  font-size: calc(6px + 1vmin);
 }
 
+/*cards and containers*/
+
 .profilecontainer{
-  background-color: #737986;
+  background-color: #e5e5e6;
   padding: 16px;
   align-items:flex-start;
   justify-content: flex-start;
 }
 
+.emplistcont{
+  list-style-type: none;
+  background-color: #e5e5e6;
+  padding: 16px;
+  align-items:flex-start;
+  justify-content: flex-start;
+  display:flex;
+  flex-direction: column;
+}
 

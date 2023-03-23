@@ -9,16 +9,18 @@
  */
 
 import './App.css';
-import MyFooter, { EmploymentContainer, MyBanner, ProfileContainer } from './components/components';
+import MyFooter, { Jobs, MyBanner, ProfileContainer } from './components/components';
 
 function App() {
 
   return (
     <div className="App">
+    <div className='AppContent'>
       <MyBanner></MyBanner>
       <ProfileContainer></ProfileContainer>
-      <EmploymentContainer></EmploymentContainer>
-      <MyFooter></MyFooter>
+      <Jobs></Jobs>
+    </div>
+    <MyFooter></MyFooter>
     </div>
   );
 }
