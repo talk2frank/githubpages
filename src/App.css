@@ -1,4 +1,5 @@
 
+
 /*global variables*/
 :root{
   --main-bg-colour:white;
@@ -8,44 +9,55 @@
   --main-font-colour:black;
   --secondary-font-colour:#686767;
   --link-font-colour:#1083cb;
+  --link-hover-colour:#599bc4;
+  
   --tertiary-font-colour:white;
 
   --light-grey:#e5e5e6;
 
   --header-font:'Trebuchet MS';
 
-  --big-font-size: calc(10px + 2vmin);
-  --title-font-size:calc(8px + 2vmin);
-  --med-font-size: calc(6px + 2vmin);
-  --bold-font-size: calc(4px+ 2vmin);
-  --body-font-size: calc(2px + 2vmin);
-  --footer-font-size: calc(6px + 1vmin);
-
-  --card-max-width: 1000px;
+  --footer-font-size: 0.8rem;
+  --para-font-size: 1rem;
+  --med-font-size: 1.2rem;
+  --title-font-size:1.5rem;
+  --big-font-size: 2rem;
 }
+
+/*global items ,mainly
+- nothing needs a margin unless specified
+- text should be spaced at 1.5lines relative to screen/parent
+*/
+
+*{
+  margin:0;
+  line-height: calc(1em + 0.5rem);
+} 
 
 
 /*General Styling*/
 
 a{
   color:var(--link-font-colour); 
+  font-size: var(--para-font-size);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: -0.03em; 
 }
 
-h1 {
-  margin:0 0 0 0;
+a:hover{
+  color: var(--link-hover-colour);
 }
 
 h2 {
   font-size: var(--title-font-size);
   color:var(--tertiary-font-colour);
-  margin:0 0 0 0;
 }
 
 h5 {
   font-size: var(--med-font-size);
   color: var(--secondary-font-colour);
   font-weight: 500;
-  margin:0 0 0 0;
 }
 
 h6 {
@@ -56,9 +68,9 @@ h6 {
 }
 
 
-body{
+p{
   margin: 0 0 0 0;
-  font-size: var(--body-font-size);
+  font-size: var(--para-font-size);
   color: var(--secondary-font-colour);
 }
 
@@ -67,23 +79,40 @@ body{
 .App{
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 100vh;
+  width: 100%;
+}
+
+.header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header_list{
+  display: flex;
+  align-items: center;
+  list-style: none;
+  border: 1px solid red;
+  padding: 0;
+  gap:2em;
 }
 
 .AppContent{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  background-color: #1083cb;
   padding: 8px;
   justify-content:center;
   align-items: center;
-
 }
 
 .App-icon{
   height: 40px;
   padding: 0px 8px 0px 8px;
+  transition: transform 0.3s;
 }
 
 .App-icon:hover{
@@ -116,9 +145,9 @@ body{
 }
 
 .Banner-header{
-  font-family:var(--big-font-size);
+  font-family:var(--header-font);
   font-weight:500;
-  font-size: calc(16px + 2vmin);
+  font-size: var(--big-font-size);
   color: var(--main-font-colour);
 }
 
@@ -145,28 +174,70 @@ body{
   justify-content: flex-start;
 }
 
-/*cards and containers*/
+/*cards*/
 
-.profilecontainer{
+.profile{
   border-radius: 10px;
   background-image: linear-gradient(var(--secondary-bg-colour),white);
   padding: 16px;
-  max-width: var(--card-max-width);
+  margin-bottom: 4px;
 }
 
 
-.emplistcont{
+.emplist{
   padding: 0 0 0 0; 
 }
 
-.emplist{
+.emplistitem{
   border-radius: 10px;
   list-style-type: none;
   background-image: linear-gradient(var(--secondary-bg-colour),white);
   padding: 16px;
   margin-bottom: 4px;
-  max-width: var(--card-max-width);
   
 }
 
 
+/* media queries used to define max and min widths of view based on screen size */
+
+/*xs*/
+@media (min-width:475px) {
+  .App{
+    max-width: 474px;
+  }
+}
+
+/*sm*/
+@media (min-width:640px) {
+  .App{
+    max-width: 640px;
+  }
+}
+
+/*md*/
+@media (min-width:768px) {
+  .App{
+    max-width: 768px;
+  }
+}
+
+/*lg*/
+@media (min-width:1024px) {
+  .App{
+    max-width: 1024px;
+  }
+}
+
+/*xl*/
+@media (min-width:1280px) {
+  .App{
+    max-width: 1280px;
+  }
+}
+
+/*xxl*/
+@media (min-width:1536px) {
+  .App{
+    max-width: 1536px;
+  }
+}
