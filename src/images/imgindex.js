@@ -13,11 +13,11 @@ import react from './react.png';
 import github from './github.png';
 import me from './Me.png';
 
-const icons = {
+const images = {
     linkedin,
     react,
     github,
     me
 }
 
-export default icons;
+export default images;

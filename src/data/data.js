@@ -1,6 +1,5 @@
 export const profileData = [
     {
-        name:"Frank Kinsey",
         bio:"",
         keyskills:"Mobile Application Development · React Native · AWS Amplify · Google Firebase · Azure · Git · SQL · Power BI"
     }

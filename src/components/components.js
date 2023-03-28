@@ -8,40 +8,28 @@
  * 
  */
 
-import icons from '../images/imgindex.js';
+import images from '../images/imgindex.js';
 import { employerData, profileData } from '../data/data.js';
 
 
+//<h2 className='AppBanner-subtext'>A site developed in <a href='https://reactjs.org/'>React</a></h2>
 
 export function MyBanner(){
     return(
-        <div className="App-banner">
-        <img src={icons.me} className="AppBanner-profilepic" alt="Profile Pic" />
-        <div className='AppBanner-space'>
-            <h1 className='AppBanner-header'>Frank Kinsey</h1>
-            <body className='AppBody-text'>Welcome to my site</body>
-            <h2 className='AppBanner-subtext'> 
-            Site developed in <a href='https://reactjs.org/'>React</a>
-            <a href='https://reactjs.org/'>
-            <img src={icons.react} alt="React" className='App-icon'></img></a>
-            under construction
-            </h2>
+        <div className="Banner">
+        <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
+        <div className='Banner-cont'>
+            <h1 className='Banner-header'>Frank Kinsey</h1>
+            <body>Agile • Cross-Platform • Interaction Design • Developer</body>
         </div>
       </div>
     )
 }
 
-export function Profile({ name, bio, keyskills}){
-  if (!name) return <div />;
-  return (
-    <div>
-      <h2 className='AppBody-header'>{name}</h2>
-      <h5 className='AppBody-text'>{bio}</h5>
-      <h5 className='AppBody-text'>{keyskills}</h5>  
-    </div>
-  );
-};
 
+//containers for data items
+
+//profile container
 export function ProfileContainer(){
   return(
     <>
@@ -52,8 +40,8 @@ export function ProfileContainer(){
               <Profile
                 key={key}
                 name={data.name}
-                bio={data.bio}
                 keyskills={data.keyskills}
+                bio={data.bio}
               />
             </div>
           );
@@ -63,22 +51,8 @@ export function ProfileContainer(){
   )
 }
 
-//class for a job
-export function Job({job}){
-  if (!job) return <div/>;
-  return (
-    <li className='emplist'>
-      <h4 className='AppBody-header'>{job.role}</h4>
-      <h6 className='AppBody-text'>{job.employer}</h6>
-      <h5 className='AppBody-text'>{job.period}</h5>
-      <h5 className='AppBody-text'>{job.skills}</h5>
-      <body className='AppBody-text'>{job.description}</body>  
-    </li>
-  );
-};
-
-//list of jobs why no worky?
-export function Jobs(){
+//employer container
+export function EmplistCont(){
   if (!employerData) return <div/>;
   return (
     <ul className='emplistcont'>
@@ -92,15 +66,46 @@ export function Jobs(){
 };
 
 
+//component classes for handling items
+
+//component class for profile data
+export function Profile({bio, keyskills}){
+  if (!keyskills) return <div/>;
+  return (
+    <div>
+      <h2>Profile</h2>
+      <h6>{keyskills}</h6>
+      <body>{bio}</body>
+    </div>
+  );
+};
+
+//component class for a job
+export function Job({job}){
+  if (!job) return <div/>;
+  return (
+    <li className='emplist'>
+      <h2>{job.role}</h2>
+      <h6>{job.period}</h6>
+      <h5>{job.employer}</h5>
+      <h6>{job.skills}</h6>
+      <body>{job.description}</body>  
+    </li>
+  );
+};
+
+
+
+//footer component
 export function MyFooter(){
     return(
         <footer className='App-footer'>
         <a href='https://www.linkedin.com/in/frank-kinsey/'>
-          <img src={icons.linkedin} alt="LinkedIn" className='App-icon'></img>
+          <img src={images.linkedin} alt="LinkedIn" className='App-icon'></img>
         </a>
-        <p className='AppFooter-tagline'>Site created by Frank Kinsey 2023</p>
+        <p className='AppFooter-tagline'>© 2023, Frank Kinsey</p>
         <a href='https://github.com/talk2frank'>
-              <img src={icons.github} alt="GitHub" className='App-icon'></img>
+              <img src={images.github} alt="GitHub" className='App-icon'></img>
         </a>
       </footer>
     )

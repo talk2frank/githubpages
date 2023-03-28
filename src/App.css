@@ -1,21 +1,65 @@
+
+/*global variables*/
+:root{
+  --main-bg-colour:white;
+  --secondary-bg-colour:#b5b5b5;
+  --tertiary-bg-colour:black;
+
+  --main-font-colour:black;
+  --secondary-font-colour:#686767;
+  --link-font-colour:#1083cb;
+  --tertiary-font-colour:white;
+
+  --light-grey:#e5e5e6;
+
+  --header-font:'Trebuchet MS';
+
+  --big-font-size: calc(10px + 2vmin);
+  --title-font-size:calc(8px + 2vmin);
+  --med-font-size: calc(6px + 2vmin);
+  --bold-font-size: calc(4px+ 2vmin);
+  --body-font-size: calc(2px + 2vmin);
+  --footer-font-size: calc(6px + 1vmin);
+
+  --card-max-width: 1000px;
+}
+
+
 /*General Styling*/
 
 a{
-  color: rgb(52, 180, 227);
-  
-}
-a:hover{
-  color: rgb(176, 211, 223);  
+  color:var(--link-font-colour); 
 }
 
-table {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+h1 {
+  margin:0 0 0 0;
 }
 
-td {
-  width: 30em;
+h2 {
+  font-size: var(--title-font-size);
+  color:var(--tertiary-font-colour);
+  margin:0 0 0 0;
+}
+
+h5 {
+  font-size: var(--med-font-size);
+  color: var(--secondary-font-colour);
+  font-weight: 500;
+  margin:0 0 0 0;
+}
+
+h6 {
+  font-size: var(--body-font-size);
+  color:var(--link-font-colour);
+  font-weight: 600;
+  margin:0 0 0 0;
+}
+
+
+body{
+  margin: 0 0 0 0;
+  font-size: var(--body-font-size);
+  color: var(--secondary-font-colour);
 }
 
 /*App level styling*/
@@ -24,11 +68,17 @@ td {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f2f2f2;
 }
 
 .AppContent{
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #1083cb;
+  padding: 8px;
+  justify-content:center;
+  align-items: center;
+
 }
 
 .App-icon{
@@ -36,60 +86,42 @@ td {
   padding: 0px 8px 0px 8px;
 }
 
+.App-icon:hover{
+  transform: scale(1.1);
+}
+
 /*Banner styling*/
 
-.App-banner {
+.Banner {
   display: flex;
   flex-direction: row;
-  background-color: #c4c5c8;
+  background-image: linear-gradient(to right,var(--main-bg-colour),var(--secondary-bg-colour));
   padding: 16px;
-  align-items:center;
+  align-items:flex-end;
   justify-items: center;
   
 }
 
-.AppBanner-profilepic {
+
+.Banner-profilepic {
   height: calc(100px + 10vmin);
-  padding: 6px;
   max-height: 200px;
   pointer-events: none;
 }
 
-.AppBanner-space{
+.Banner-cont{
   padding: 8px;
   display: flex;
   flex-direction: column;
 }
 
-.AppBanner-header{
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Banner-header{
+  font-family:var(--big-font-size);
+  font-weight:500;
+  font-size: calc(16px + 2vmin);
+  color: var(--main-font-colour);
 }
 
-.AppBanner-subtext{
-  font-size: calc(6px + 2vmin);
-  color: white;
-}
-
-
-/*Body styling*/
-
-.App-body{
-  background-color: #e6e6e6;
-  padding: 16px;
-  align-items:flex-start;
-  justify-content: flex-start;
-}
-
-.AppBody-header{
-  font-size: calc(10px + 2vmin);
-  color: rgb(45, 43, 43);
-}
-
-.AppBody-text{
-  font-size: calc(4px + 2vmin);
-  color: rgb(104, 103, 103);
-}
 
 /*Footer styling*/
 
@@ -103,25 +135,38 @@ td {
 }
 
 .AppFooter-tagline{
-  font-size: calc(6px + 1vmin);
+  font-size: var(--footer-font-size);
+}
+
+/*AppBody styling*/
+
+.App-body{
+  align-items:flex-start;
+  justify-content: flex-start;
 }
 
 /*cards and containers*/
 
 .profilecontainer{
-  background-color: #e5e5e6;
+  border-radius: 10px;
+  background-image: linear-gradient(var(--secondary-bg-colour),white);
   padding: 16px;
-  align-items:flex-start;
-  justify-content: flex-start;
+  max-width: var(--card-max-width);
 }
 
+
 .emplistcont{
-  list-style-type: none;
-  background-color: #e5e5e6;
-  padding: 16px;
-  align-items:flex-start;
-  justify-content: flex-start;
-  display:flex;
-  flex-direction: column;
+  padding: 0 0 0 0; 
 }
+
+.emplist{
+  border-radius: 10px;
+  list-style-type: none;
+  background-image: linear-gradient(var(--secondary-bg-colour),white);
+  padding: 16px;
+  margin-bottom: 4px;
+  max-width: var(--card-max-width);
+  
+}
+
 
