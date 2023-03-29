@@ -17,9 +17,18 @@ export function MyHeader(){
     <header className='header'>
       <nav>
         <ul className='header_list'>
-          <li><a href='#about'>About</a></li>
-          <li><a href='#contac'>Contact</a></li>
+          <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>
+          <li className='tab'><a className='tablink' href='#bio'>Bio</a></li>
+          <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
+          <li className='tab'>
+            <button className='sunbutton'>
+              <img className='sunimg' src={images.sun} alt='Toggle Theme'></img>
+            </button>
+          </li>
         </ul>
+        <button className='bars'>
+          <img src={images.bars} alt='menu'></img>
+        </button>
       </nav>
     </header>
   )
@@ -44,7 +53,7 @@ export function MyBanner(){
 //profile container
 export function Profile(){
   return(
-      <article className="profile">
+      <article id='bio' className="profile">
         {profileData.map((data, key) => {
           return (
             <div key={key}>
@@ -64,6 +73,8 @@ export function Profile(){
 export function Emplist(){
   if (!employerData) return <div/>;
   return (
+    <section id='employment' className='empsection'>
+    <h1>Employment History</h1>
     <ul className='emplist'>
       {employerData.map((job)=>{
         return(
@@ -71,6 +82,7 @@ export function Emplist(){
         );
       })}
     </ul>
+    </section>
   );
 };
 
@@ -81,11 +93,11 @@ export function Emplist(){
 export function ProfileData({bio, keyskills}){
   if (!keyskills) return <div/>;
   return (
-    <div>
-      <h2>Profile</h2>
-      <h6>{keyskills}</h6>
+    <section>
+      <h1>Profile</h1>
+      <h4>{keyskills}</h4>
       <p>{bio}</p>
-    </div>
+    </section>
   );
 };
 
@@ -95,9 +107,9 @@ export function Job({job}){
   return (
     <li className='emplistitem' key={job.role}>
       <h2>{job.role}</h2>
-      <h6>{job.period}</h6>
-      <h5>{job.employer}</h5>
-      <h6>{job.skills}</h6>
+      <h5>{job.period}</h5>
+      <h3>{job.employer}</h3>
+      <h4>{job.skills}</h4>
       <p>{job.description}</p>  
     </li>
   );

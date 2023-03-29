@@ -12,12 +12,16 @@ import linkedin from './linkedin.png';
 import react from './react.png';
 import github from './github.png';
 import me from './Me.png';
+import sun from './sunimg.svg';
+import bars from './bars.svg';
 
 const images = {
     linkedin,
     react,
     github,
-    me
+    me,
+    sun,
+    bars
 }
 
 export default images;
