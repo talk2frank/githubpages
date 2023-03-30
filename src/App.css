@@ -4,7 +4,7 @@
 :root{
   --main-bg-colour:white;
   --secondary-bg-colour:#b5b5b5;
-  --tertiary-bg-colour:black;
+  --tertiary-bg-colour:#72d0ff;
 
   --main-font-colour:black;
   --secondary-font-colour:#686767;
@@ -41,6 +41,7 @@
 
 a{
   color:var(--link-font-colour); 
+  text-decoration: none;
 }
 
 a:hover{
@@ -52,6 +53,10 @@ button{
   border: none;
   background: none;
   padding: 0;
+}
+
+img{
+  display: block;
 }
 
 h1{
@@ -92,6 +97,11 @@ p{
   color: var(--secondary-font-colour);
 }
 
+ul{
+  text-decoration: none;
+  padding: 0;
+}
+
 /*App level styling*/
 
 .App{
@@ -114,6 +124,38 @@ p{
 .header_list{
   display: none;
 }
+
+/*mobile nav bar*/
+
+.navcont{
+  position: relative;
+}
+
+.mobile_nav{
+  visibility:hidden;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  background-color: #9e57e0;
+}
+
+.mobile_navmenu{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  padding: 0;
+  gap: 0.3rem;
+}
+
+.mobile_navline{
+  border: 1px solid black;
+  padding-right: 1.5rem;
+}
+/*bars*/
 
 .bars{
   color: var(--main-font-colour);
@@ -145,9 +187,9 @@ p{
 .Banner {
   display: flex;
   flex-direction: row;
-  background-image: linear-gradient(to top, var(--main-bg-colour),var(--secondary-bg-colour));
   padding: 16px;
   border-radius: 10px;
+  border-top:2px solid var(--secondary-bg-colour);
   align-items:flex-end;
   justify-items: center;
   margin-bottom: 4px;
@@ -204,7 +246,7 @@ p{
 /*cards*/
 
 .profile{
-  border-top: 2px solid var(--link-font-colour);
+  
   padding: 16px;
   margin-bottom: 4px;
 }
@@ -230,6 +272,10 @@ p{
 @media (min-width:475px) {
   .App{
     max-width: 474px;
+  }
+  .sunimg2{
+    display: block;
+    width: 24px;
   }
 }
 
@@ -259,7 +305,6 @@ p{
   .tablink{
     color:var(--link-font-colour); 
     font-size: var(--para-font-size);
-    text-decoration: none;
     font-weight: 500;
     letter-spacing: -0.03em;
     transition:color 0.5s;
@@ -273,6 +318,7 @@ p{
     display: block;
     width: 24px;
   }
+
 
   .bars{
     display: none;

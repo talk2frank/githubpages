@@ -19,18 +19,45 @@ export function MyHeader(){
         <ul className='header_list'>
           <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>
           <li className='tab'><a className='tablink' href='#bio'>Bio</a></li>
-          <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
+          <li className='tab'><a className='tablink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
           <li className='tab'>
             <button className='sunbutton'>
               <img className='sunimg' src={images.sun} alt='Toggle Theme'></img>
             </button>
           </li>
         </ul>
-        <button className='bars'>
+        <button id='barbutton' className='bars' onClick={clickBars}>
           <img src={images.bars} alt='menu'></img>
         </button>
       </nav>
     </header>
+  )
+}
+/*javascript to shjow or hide menu*/
+const clickBars = () => {
+  const mobilenav = document.querySelector('.mobile_nav');
+    if(mobilenav.style.visibility === 'visible'){
+    mobilenav.style.visibility ='hidden';
+    } else mobilenav.style.visibility = 'visible';
+}
+  
+  
+export function MobileNav(){
+  return(
+    <div className='mobile_nav'>
+      <nav>
+        <ul className='mobile_navmenu'>
+          <li><a className='mobile_navlink' href='#about'>About</a></li>
+          <li><a className='mobile_navlink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
+          <li className='mobile_navline'></li>
+          <li >
+            <button className='sunbutton'>
+              <img className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
   )
 }
 

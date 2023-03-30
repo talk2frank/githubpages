@@ -9,13 +9,16 @@
  */
 
 import './App.css';
-import MyFooter, { Emplist, MyBanner, MyHeader, Profile } from './components/components';
+import MyFooter, { Emplist, MobileNav, MyBanner, MyHeader, Profile } from './components/components';
 
 function App() {
 
   return (
     <div className="App">
       <MyHeader></MyHeader>
+      <div className='navcont'>
+        <MobileNav></MobileNav>
+      </div>
       <MyBanner></MyBanner>
       <main className='AppContent'>
         <Profile></Profile>
