@@ -17,58 +17,92 @@ export function MyHeader(){
     <header className='header'>
       <nav>
         <ul className='header_list'>
-          <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>
           <li className='tab'><a className='tablink' href='#bio'>Bio</a></li>
+          <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>       
           <li className='tab'><a className='tablink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
           <li className='tab'>
-            <button className='sunbutton'>
+            <button id='themebutton' className='sunbutton'>
               <img className='sunimg' src={images.sun} alt='Toggle Theme'></img>
             </button>
           </li>
         </ul>
-        <button id='barbutton' className='bars' onClick={clickBars}>
-          <img src={images.bars} alt='menu'></img>
-        </button>
       </nav>
     </header>
   )
 }
-/*javascript to shjow or hide menu*/
-const clickBars = () => {
-  const mobilenav = document.querySelector('.mobile_nav');
-    if(mobilenav.style.visibility === 'visible'){
-    mobilenav.style.visibility ='hidden';
-    } else mobilenav.style.visibility = 'visible';
-}
-  
-  
+
+
 export function MobileNav(){
   return(
     <div className='mobile_nav'>
-      <nav>
-        <ul className='mobile_navmenu'>
-          <li><a className='mobile_navlink' href='#about'>About</a></li>
-          <li><a className='mobile_navlink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
-          <li className='mobile_navline'></li>
-          <li >
-            <button className='sunbutton'>
-              <img className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
+       <button id='barbutton' className='bars'>
+          <img src={images.bars} alt='menu'></img>
+      </button>
+      <nav className='mobile_navmenu'>
+          <div className='movile_navcontent'>
+            <a className='mobile_navlink' href='#bio'>About</a>
+            <a className='mobile_navlink' href='#employment'>Employment</a>
+            <a className='mobile_navlink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a>
+            <div className='mobile_navline'></div>
+            <button id='themebutton' className='sunbutton'>
+                <img className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
             </button>
-          </li>
-        </ul>
+          </div>
       </nav>
     </div>
   )
 }
 
 
+export const themeToggle = () =>{
+
+  //grab any local storage state for theme
+  const theme = localStorage.getItem('theme');
+
+  //on mount - if theme exists then add theme to body
+  theme && document.body.classList.add('darkmode');
+
+  //handler of theme toggle and update local storage
+  const handleThemeToggle = () =>{
+    document.body.classList.toggle('darkmode');
+      if(document.body.classList.contains('darkmode')){
+        localStorage.setItem('theme','darkmode');
+      }
+      else{
+        localStorage.removeItem('theme');
+      }
+  };
+
+  //access to theme button
+  const themetoggleBtn = document.querySelectorAll('#themebutton');
+
+  //add button listener and toggle darkmode and update localstorage as req
+  themetoggleBtn.forEach(btn =>{
+    btn.addEventListener('click',handleThemeToggle)
+  });
+
+};
+
+
+/*javascript to shjow or hide menu - removed
+const clickBars = () => {
+  const mobilenav = document.querySelector('.mobile_nav');
+    if(mobilenav.style.visibility === 'visible'){
+    mobilenav.style.visibility ='hidden';
+    } else mobilenav.style.visibility = 'visible';
+}
+*/
+  
+
+
+
 export function MyBanner(){
     return(
       <div className="Banner">
         <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
-        <div className='Banner-cont'>
-            <h1 className='Banner-header'>Frank Kinsey</h1>
-            <p>Agile • Cross-Platform • Interaction Design • Developer</p>
+        <div className='Banner-content'>
+            <h1 className='Banner-title'>Frank Kinsey</h1>
+            <p>Agile Developer • Full-Stack • Serverless • Cross-Platform • Business Analysis • User Design • Interaction Design</p>
         </div>
       </div>
     )

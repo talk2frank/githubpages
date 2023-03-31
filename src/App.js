@@ -9,24 +9,26 @@
  */
 
 import './App.css';
-import MyFooter, { Emplist, MobileNav, MyBanner, MyHeader, Profile } from './components/components';
+import MyFooter, { Emplist, MobileNav, MyBanner, MyHeader, Profile, themeToggle } from './components/components';
 
 function App() {
 
   return (
-    <div className="App">
-      <MyHeader></MyHeader>
-      <div className='navcont'>
+    <body>
+      <div className="App">
+        <MyHeader></MyHeader>
         <MobileNav></MobileNav>
+        <MyBanner></MyBanner>
+        <main className='AppContent'>
+          <Profile></Profile>
+          <Emplist></Emplist>
+        </main>
+        <MyFooter></MyFooter>
       </div>
-      <MyBanner></MyBanner>
-      <main className='AppContent'>
-        <Profile></Profile>
-        <Emplist></Emplist>
-      </main>
-      <MyFooter></MyFooter>
-    </div>
+    </body>
   );
 }
+
+themeToggle();
 
 export default App;

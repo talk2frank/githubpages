@@ -2,57 +2,61 @@
 
 /*global variables*/
 :root{
-  --main-bg-colour:white;
-  --secondary-bg-colour:#b5b5b5;
-  --tertiary-bg-colour:#72d0ff;
+  /*colours*/
+  --main-colour:#ffffff;
+  --second-colour: #1f1f1f;
+  --grey-colour:#686767;
+  --lightgrey-colour:#b5b5b5;
 
-  --main-font-colour:black;
-  --secondary-font-colour:#686767;
-  --tertiary-font-colour:white;
+  --blue-colour:#1083cb;
+  --lightblue-colour:#72d0ff;
+  --purple-font:#9e57e0;
 
-  --link-font-colour:#1083cb;
-  --link-hover-colour:#9e57e0;
-  
-  
-
-  --light-grey:#e5e5e6;
-
+  /*fonts*/
   --header-font:'Trebuchet MS';
 
-  --footer-font-size: 0.8rem;
-  --para-font-size: 1rem;
+  /*sizes*/
+  --xs-font-size: 0.8rem;
+  --s-font-size: 0.9rem;
   --med-font-size: 1.2rem;
-  --title-font-size:1.5rem;
-  --big-font-size: 2rem;
+  --lrg-font-size:1.5rem;
+  --xl-font-size: 2rem;
 }
 
-/*global items ,mainly
-- nothing needs a margin unless specified
-- text should be spaced at 1.5lines relative to screen/parent
-*/
-
+/*global items*/
+/*removes all unnecesaary default paffing and margins and standardises line spacing*/
 *{
   margin:0;
+  padding: 0;
   line-height: calc(1em + 0.5rem);
 } 
 
 
+.darkmode{
+  --main-colour:#1f1f1f;
+  --second-colour: #ffffff;
+}
+
+
 /*General Styling*/
 
+body{
+  background-color: var(--main-colour);
+}
+
 a{
-  color:var(--link-font-colour); 
+  color:var(--blue-colour); 
   text-decoration: none;
 }
 
 a:hover{
-  color: var(--link-hover-colour);
+  color: var(--purple-font);
 }
 
 button{
   display: block;
   border: none;
   background: none;
-  padding: 0;
 }
 
 img{
@@ -60,65 +64,65 @@ img{
 }
 
 h1{
-  font-size: var(--title-font-size); 
+  color: var(--second-colour);
+  font-size: var(--lrg-font-size); 
   font-family: var(--header-font);
   margin-bottom: 4px;
 }
 
 h2 {
-  font-size: var(--title-font-size);
-  color:var(--secondary-font-colour);
+  color:var(--grey-colour);
+  font-size: var(--lrg-font-size);
 }
 
 h3 {
+  color: var(--grey-colour);
   font-size: var(--med-font-size);
-  color: var(--secondary-font-colour);
   font-weight: 500;
 }
 
 h4 {
+  color:var(--blue-colour);
   font-size: var(--body-font-size);
-  color:var(--link-font-colour);
   font-weight: 600;
-  margin:0 0 0 0;
 }
 
 h5 {
+  color:var(--purple-font);
   font-size: var(--body-font-size);
-  color:var(--link-hover-colour);
   font-weight: 600;
-  margin:0 0 0 0;
 }
 
 
 p{
-  margin: 0 0 0 0;
-  font-size: var(--para-font-size);
-  color: var(--secondary-font-colour);
+  color: var(--grey-colour);
+  font-size: var(--s-font-size);
+  
 }
 
 ul{
   text-decoration: none;
-  padding: 0;
 }
 
 /*App level styling*/
 
+
+/*margin left right auto ensures items stay centred*/
 .App{
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   min-height: 100vh;
-  width: 100%;
   padding-top: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .header{
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding-right: 10px;
 }
 
 .header_list{
@@ -127,21 +131,26 @@ ul{
 
 /*mobile nav bar*/
 
-.navcont{
-  position: relative;
-}
-
 .mobile_nav{
-  visibility:hidden;
-  z-index: 999;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4px;
-  background-color: #9e57e0;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: 0;
+  align-items: flex-end;
+  
 }
 
-.mobile_navmenu{
+/* Dropdown content (hidden by default) */
+.mobile_navmenu {
+  display: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  position: absolute;
+}
+
+.movile_navcontent{
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -151,17 +160,43 @@ ul{
   gap: 0.3rem;
 }
 
-.mobile_navline{
-  border: 1px solid black;
-  padding-right: 1.5rem;
-}
-/*bars*/
+
+/*mobile nav elements*/
 
 .bars{
-  color: var(--main-font-colour);
+  color: var(--second-colour);
   width: 30px;
   display: block;
+  font-family: inherit; /* Important for vertical align on mobile phones */
 }
+
+
+.mobile_nav:hover .mobile_navmenu {
+  display: block;
+  z-index: 999;
+}
+
+
+
+
+.mobile_navline{
+  border: 1px solid black;
+  width: 50%;
+  padding-right: 1.5rem;
+}
+
+.sunimg2{
+  display: block;
+  width: 24px;
+}
+
+.sunimg2:hover{
+  display: block;
+  width: 24px;
+  cursor:pointer;
+}
+
+/*App start*/
 
 
 .AppContent{
@@ -187,12 +222,13 @@ ul{
 .Banner {
   display: flex;
   flex-direction: row;
-  padding: 16px;
   border-radius: 10px;
-  border-top:2px solid var(--secondary-bg-colour);
-  align-items:flex-end;
+  border-top:2px solid var(--lightgrey-colour);
+  border-bottom:2px solid var(--lightgrey-colour);
+  align-items:center;
   justify-items: center;
   margin-bottom: 4px;
+  padding: 4px;
   
 }
 
@@ -203,23 +239,20 @@ ul{
   pointer-events: none;
 }
 
-.Banner-cont{
+.Banner-content{
   padding: 8px;
   display: flex;
   flex-direction: column;
 }
 
-.Banner-header{
+.Banner-title{
   font-family:var(--header-font);
   font-weight:500;
-  font-size: var(--big-font-size);
-  color: var(--main-font-colour);
+  font-size: var(--xl-font-size);
+  color:var(--purple-font);
   transition: color 1s;
 }
 
-.Banner-header:hover{
-  color:var(--link-hover-colour);
-}
 
 /*Footer styling*/
 
@@ -228,12 +261,11 @@ ul{
   flex-direction: row;
   justify-content:center;
   align-items: center;
-  background-color: white;
   height: 55px;
 }
 
 .AppFooter-tagline{
-  font-size: var(--footer-font-size);
+  font-size: var(--xs-font-size);
 }
 
 /*AppBody styling*/
@@ -246,7 +278,6 @@ ul{
 /*cards*/
 
 .profile{
-  
   padding: 16px;
   margin-bottom: 4px;
 }
@@ -260,7 +291,7 @@ ul{
 }
 
 .emplistitem{
-  border-top: 2px solid var(--link-font-colour);
+  border-top: 2px solid var(--blue-colour);
   list-style-type: none;
   margin-bottom: 4px;
 }
@@ -273,11 +304,9 @@ ul{
   .App{
     max-width: 474px;
   }
-  .sunimg2{
-    display: block;
-    width: 24px;
-  }
+
 }
+
 
 /*sm*/
 @media (min-width:640px) {
@@ -289,29 +318,29 @@ ul{
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 0;
+    padding-right: 20px;
     gap:0.5em;
   }
   
   .tab{
-    border-top: 2px solid var(--secondary-bg-colour);
-    border-left: 2px solid var(--secondary-bg-colour);
-    border-right: 2px solid var(--secondary-bg-colour);
+    border-top: 2px solid var(--lightgrey-colour);
+    border-left: 2px solid var(--lightgrey-colour);
+    border-right: 2px solid var(--lightgrey-colour);
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     padding: 0 4px 0 4px;
   }
   
   .tablink{
-    color:var(--link-font-colour); 
-    font-size: var(--para-font-size);
+    color:var(--blue-colour); 
+    font-size: var(--s-font-size);
     font-weight: 500;
     letter-spacing: -0.03em;
     transition:color 0.5s;
   }
   
   .tablink:hover{
-    color: var(--link-hover-colour);
+    color: var(--purple-font);
   }
   
   .sunimg{
@@ -319,9 +348,14 @@ ul{
     width: 24px;
   }
 
+  .sunimg{
+    display: block;
+    width: 24px;
+    cursor: pointer;
+  }
 
-  .bars{
-    display: none;
+  .mobile_nav{
+    display:none;
   }
 
 }
