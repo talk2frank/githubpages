@@ -11,13 +11,13 @@
 import images from '../images/imgindex.js';
 import { employerData, profileData } from '../data/data.js';
 
-
+//header component
 export function MyHeader(){
   return(
     <header className='header'>
       <nav>
         <ul className='header_list'>
-          <li className='tab'><a className='tablink' href='#bio'>Bio</a></li>
+          <li className='tab'><a className='tablink' href='#bio'>About</a></li>
           <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>       
           <li className='tab'><a className='tablink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
           <li className='tab'>
@@ -59,10 +59,10 @@ export const themeToggle = () =>{
   //grab any local storage state for theme
   const theme = localStorage.getItem('theme');
 
-  //on mount - if theme exists then add theme to body
+  //on mount - if theme is thruthy (exists) then add theme to body
   theme && document.body.classList.add('darkmode');
 
-  //handler of theme toggle and update local storage
+  //handler of theme toggle and update local storage dwqfq
   const handleThemeToggle = () =>{
     document.body.classList.toggle('darkmode');
       if(document.body.classList.contains('darkmode')){
@@ -70,10 +70,11 @@ export const themeToggle = () =>{
       }
       else{
         localStorage.removeItem('theme');
+        document.body.removeAttribute('class');
       }
   };
 
-  //access to theme button
+  //access to theme buttonfeew
   const themetoggleBtn = document.querySelectorAll('#themebutton');
 
   //add button listener and toggle darkmode and update localstorage as req
@@ -99,17 +100,19 @@ const clickBars = () => {
 export function MyBanner(){
     return(
       <div className="Banner">
-        <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
         <div className='Banner-content'>
-            <h1 className='Banner-title'>Frank Kinsey</h1>
-            <p>Agile Developer • Full-Stack • Serverless • Cross-Platform • Business Analysis • User Design • Interaction Design</p>
+        <div className='Banner-header'>
+          <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
+          <h1 className='Banner-title'>Frank Kinsey</h1>
+        </div>
+        <p className='Banner-text'>Agile Developer • Full-Stack • Serverless • Cross-Platform • Business Analysis • User Design • Interaction Design</p>
         </div>
       </div>
     )
 }
 
 
-//cards for data items
+//cards for data item
 
 //profile container
 export function Profile(){
@@ -118,6 +121,8 @@ export function Profile(){
         {profileData.map((data, key) => {
           return (
             <div key={key}>
+              <img className='workimage' src={images.workimg} alt='workimage'></img>
+              <h1>About Me</h1>
               <ProfileData
                 key={key}
                 keyskills={data.keyskills}
@@ -155,7 +160,6 @@ export function ProfileData({bio, keyskills}){
   if (!keyskills) return <div/>;
   return (
     <section>
-      <h1>Profile</h1>
       <h4>{keyskills}</h4>
       <p>{bio}</p>
     </section>

@@ -14,6 +14,7 @@ import github from './github.png';
 import me from './Me.png';
 import sun from './sunimg.svg';
 import bars from './bars.svg';
+import workimg from './workimage.jpg';
 
 const images = {
     linkedin,
@@ -21,7 +22,8 @@ const images = {
     github,
     me,
     sun,
-    bars
+    bars,
+    workimg
 }
 
 export default images;

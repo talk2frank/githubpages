@@ -4,8 +4,8 @@
 :root{
   /*colours*/
   --main-colour:#ffffff;
-  --second-colour: #1f1f1f;
-  --grey-colour:#686767;
+  --second-colour: #171717;
+  --grey-colour:#7A7B7A;
   --lightgrey-colour:#b5b5b5;
 
   --blue-colour:#1083cb;
@@ -40,6 +40,10 @@
 
 /*General Styling*/
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   background-color: var(--main-colour);
 }
@@ -64,7 +68,7 @@ img{
 }
 
 h1{
-  color: var(--second-colour);
+  color: var(--purple-font);
   font-size: var(--lrg-font-size); 
   font-family: var(--header-font);
   margin-bottom: 4px;
@@ -97,6 +101,7 @@ h5 {
 p{
   color: var(--grey-colour);
   font-size: var(--s-font-size);
+  font-weight: 500;
   
 }
 
@@ -164,7 +169,6 @@ ul{
 /*mobile nav elements*/
 
 .bars{
-  color: var(--second-colour);
   width: 30px;
   display: block;
   font-family: inherit; /* Important for vertical align on mobile phones */
@@ -176,13 +180,15 @@ ul{
   z-index: 999;
 }
 
-
-
-
 .mobile_navline{
   border: 1px solid black;
   width: 50%;
   padding-right: 1.5rem;
+}
+
+.mobile_navlink{
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .sunimg2{
@@ -226,31 +232,48 @@ ul{
   border-top:2px solid var(--lightgrey-colour);
   border-bottom:2px solid var(--lightgrey-colour);
   align-items:center;
-  justify-items: center;
+  justify-content: center;
   margin-bottom: 4px;
   padding: 4px;
+  height: 92vh;
   
 }
 
 
 .Banner-profilepic {
-  height: calc(100px + 10vmin);
+  height: calc(100px + 20vmin);
   max-height: 200px;
   pointer-events: none;
+}
+
+.Banner-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:2em;
+  margin-bottom: 8px;
 }
 
 .Banner-content{
   padding: 8px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Banner-title{
   font-family:var(--header-font);
   font-weight:500;
-  font-size: var(--xl-font-size);
+  font-size: 3rem;
   color:var(--purple-font);
   transition: color 1s;
+}
+
+.Banner-text{
+  width: 80%;
+  font-size: 1.2rem;
 }
 
 
@@ -280,6 +303,10 @@ ul{
 .profile{
   padding: 16px;
   margin-bottom: 4px;
+}
+
+.workimage{
+  width: 100%;
 }
 
 .empsection{
