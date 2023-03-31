@@ -19,7 +19,7 @@ export function MyHeader(){
         <ul className='header_list'>
           <li className='tab'><a className='tablink' href='#about'>About</a></li>
           <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>       
-          <li className='tab'><a className='tablink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
+          <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
           <li className='tab'>
             <button id='themebutton' className='sunbutton'>
               <img className='sunimg' src={images.sun} alt='Toggle Theme'></img>
@@ -42,7 +42,7 @@ export function MobileNav(){
           <div className='movile_navcontent'>
             <a className='mobile_navlink' href='#about'>About</a>
             <a className='mobile_navlink' href='#employment'>Employment</a>
-            <a className='mobile_navlink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a>
+            <a className='mobile_navlink' href='#contact'>Contact</a>
             <div className='mobile_navline'></div>
             <button id='themebutton' className='sunbutton'>
                 <img className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
@@ -180,35 +180,42 @@ export function Job({job}){
   );
 };
 
-/*
+//class for a contact object
+class Contact{
+  constructor(href,src,alt){
+    this.href = href;
+    this.src = src;
+    this.alt = alt;
+  }
+}
+
 export function Contacts(){
+  const email = new Contact('mailto:frankkinsey1@outlook.com',images.email,'Email');
+  const linkedin = new Contact('https://www.linkedin.com/in/frank-kinsey/',images.linkedin,'Linkedin');
+  const github = new Contact('https://github.com/talk2frank',images.github,'GitHub');
+  
   return(
       <article id='contact'>
         <h1>Contact Information</h1>
         <ul className="contactlist">
-          <ContactItem></ContactItem>
-          <a href='https://github.com/talk2frank'>
-            <img src={images.github} alt="GitHub" className='App-icon'></img>
-          </a>
+          <ContactItem link={email}></ContactItem>
+          <ContactItem link={linkedin}></ContactItem>
+          <ContactItem link={github}></ContactItem>
         </ul>
       </article>
   );
 };
 
-
-export function ContactItem(){
+export function ContactItem({link}){
   return(
     <div className='contactlistitem'>
-    <a href='https://www.linkedin.com/in/frank-kinsey/'>
-            <img src={images.linkedin} alt="LinkedIn" className='App-icon'></img>
+    <a href={link.href}>
+            <img src={link.src} alt={link.alt} className='App-icon'></img>
     </a>
-    <p>Linkedin</p>
+    <a href={link.href}>{link.alt}</a>
     </div>
   );
 };
-
-*/
-
 
 
 //footer component

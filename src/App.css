@@ -326,6 +326,12 @@ ul{
   margin-bottom: 4px;
 }
 
+.contactlist{
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
 .contactlistitem{
   display: flex;
   flex-direction: row;

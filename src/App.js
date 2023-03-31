@@ -9,7 +9,7 @@
  */
 
 import './App.css';
-import MyFooter, {Emplist, MobileNav, MyBanner, MyHeader, Profile, themeToggle } from './components/components';
+import MyFooter, {Contacts, Emplist, MobileNav, MyBanner, MyHeader, Profile, themeToggle } from './components/components';
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
         <main className='AppContent'>
           <Profile></Profile>
           <Emplist></Emplist>
+          <Contacts></Contacts>
         </main>
         <MyFooter></MyFooter>
       </div>
