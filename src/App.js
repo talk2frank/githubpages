@@ -9,7 +9,7 @@
  */
 
 import './App.css';
-import MyFooter, { Emplist, MobileNav, MyBanner, MyHeader, Profile, themeToggle } from './components/components';
+import MyFooter, {Emplist, MobileNav, MyBanner, MyHeader, Profile, themeToggle } from './components/components';
 
 function App() {
 

@@ -10,7 +10,7 @@
 
   --blue-colour:#1083cb;
   --lightblue-colour:#72d0ff;
-  --purple-font:#9e57e0;
+  --purple-font:#8750bb;
 
   /*fonts*/
   --header-font:'Trebuchet MS';
@@ -209,13 +209,10 @@ ul{
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items: center;
 }
 
 .App-icon{
   height: 40px;
-  padding: 0px 8px 0px 8px;
   transition: transform 0.3s;
 }
 
@@ -273,7 +270,7 @@ ul{
 
 .Banner-text{
   width: 80%;
-  font-size: 1.2rem;
+  font-size: var(--med-font-size);
   text-align: center;
 }
 
@@ -329,6 +326,12 @@ ul{
   margin-bottom: 4px;
 }
 
+.contactlistitem{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5em;
+}
 
 /* media queries used to define max and min widths of view based on screen size */
 

@@ -17,7 +17,7 @@ export function MyHeader(){
     <header className='header'>
       <nav>
         <ul className='header_list'>
-          <li className='tab'><a className='tablink' href='#bio'>About</a></li>
+          <li className='tab'><a className='tablink' href='#about'>About</a></li>
           <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>       
           <li className='tab'><a className='tablink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a></li>
           <li className='tab'>
@@ -40,7 +40,7 @@ export function MobileNav(){
       </button>
       <nav className='mobile_navmenu'>
           <div className='movile_navcontent'>
-            <a className='mobile_navlink' href='#bio'>About</a>
+            <a className='mobile_navlink' href='#about'>About</a>
             <a className='mobile_navlink' href='#employment'>Employment</a>
             <a className='mobile_navlink' href='mailto:frankkinsey1@outlook.com?subject=Github Profile Query'>Contact</a>
             <div className='mobile_navline'></div>
@@ -117,7 +117,7 @@ export function MyBanner(){
 //profile container
 export function Profile(){
   return(
-      <article id='bio' className="profile">
+      <article id='about' className="profile">
       <img className='workimage' src={images.workimg} alt='workimage'></img>
         {profileData.map((data, key) => {
           return (
@@ -155,7 +155,7 @@ export function Emplist(){
 
 //component classes for handling items
 
-//component class for profile data
+//data holding component for profile data
 export function ProfileData({bio, keyskills}){
   if (!keyskills) return <div/>;
   return (
@@ -166,7 +166,7 @@ export function ProfileData({bio, keyskills}){
   );
 };
 
-//component class for a job
+//data holding component for a job
 export function Job({job}){
   if (!job) return <div/>;
   return (
@@ -180,33 +180,44 @@ export function Job({job}){
   );
 };
 
-
-export function Contact(){
+/*
+export function Contacts(){
   return(
-      <article id='bio' className="profile">
-          return (
-            <div>
-             
-            </div>
-          );
+      <article id='contact'>
+        <h1>Contact Information</h1>
+        <ul className="contactlist">
+          <ContactItem></ContactItem>
+          <a href='https://github.com/talk2frank'>
+            <img src={images.github} alt="GitHub" className='App-icon'></img>
+          </a>
+        </ul>
       </article>
-  )
-}
+  );
+};
+
+
+export function ContactItem(){
+  return(
+    <div className='contactlistitem'>
+    <a href='https://www.linkedin.com/in/frank-kinsey/'>
+            <img src={images.linkedin} alt="LinkedIn" className='App-icon'></img>
+    </a>
+    <p>Linkedin</p>
+    </div>
+  );
+};
+
+*/
+
 
 
 //footer component
 export function MyFooter(){
     return(
         <footer className='App-footer'>
-        <a href='https://www.linkedin.com/in/frank-kinsey/'>
-          <img src={images.linkedin} alt="LinkedIn" className='App-icon'></img>
-        </a>
         <p className='AppFooter-tagline'>© 2023, Frank Kinsey</p>
-        <a href='https://github.com/talk2frank'>
-              <img src={images.github} alt="GitHub" className='App-icon'></img>
-        </a>
       </footer>
-    )
-}
+    );
+};
 
 export default MyFooter
