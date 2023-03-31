@@ -105,23 +105,23 @@ export function MyBanner(){
           <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
           <h1 className='Banner-title'>Frank Kinsey</h1>
         </div>
-        <p className='Banner-text'>Agile Developer • Full-Stack • Serverless • Cross-Platform • Business Analysis • User Design • Interaction Design</p>
+        <p className='Banner-text'>Agile‑Developer • Full‑Stack • Serverless • Cross‑Platform • Business‑Analysis • User‑Design • Interaction‑Design</p>
         </div>
       </div>
     )
 }
 
 
-//cards for data item
+//cards for data
 
 //profile container
 export function Profile(){
   return(
       <article id='bio' className="profile">
+      <img className='workimage' src={images.workimg} alt='workimage'></img>
         {profileData.map((data, key) => {
           return (
             <div key={key}>
-              <img className='workimage' src={images.workimg} alt='workimage'></img>
               <h1>About Me</h1>
               <ProfileData
                 key={key}
@@ -180,6 +180,18 @@ export function Job({job}){
   );
 };
 
+
+export function Contact(){
+  return(
+      <article id='bio' className="profile">
+          return (
+            <div>
+             
+            </div>
+          );
+      </article>
+  )
+}
 
 
 //footer component
