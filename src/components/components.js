@@ -85,7 +85,7 @@ export const themeToggle = () =>{
 };
 
 
-/*javascript to shjow or hide menu - removed
+/*javascript to shjow or hide menu add to onclick? - removed as using hover
 const clickBars = () => {
   const mobilenav = document.querySelector('.mobile_nav');
     if(mobilenav.style.visibility === 'visible'){
@@ -93,9 +93,6 @@ const clickBars = () => {
     } else mobilenav.style.visibility = 'visible';
 }
 */
-  
-
-
 
 export function MyBanner(){
     return(
@@ -114,11 +111,16 @@ export function MyBanner(){
 
 //cards for data
 
-//profile container
+//profile container with lazy loading image (3 classes!)
 export function Profile(){
   return(
       <article id='about' className="profile">
-      <img className='workimage' src={images.workimg} alt='workimage'></img>
+        <img 
+          className='workimage lazy loading'
+          src={'https://via.placeholder.com/606x461'}
+          data-src={images.workimg} 
+          alt='workimage'>
+        </img>
         {profileData.map((data, key) => {
           return (
             <div key={key}>
@@ -134,6 +136,43 @@ export function Profile(){
       </article>
   )
 }
+
+/* Observer function to lazy load images
+  to modify observer if needed - in second arg of IntersectionObserver
+  //observe all pag
+  root: null,
+  //no need to expand observable
+  rootMargin: '0px',
+  //how much needs to observe before acting - instant is 0
+  threshold: 0,
+*/
+export function lazyImages(){
+  //select any images with class of lazy -- 
+  const lazyimages = document.querySelectorAll('.lazy');
+  //int observer object takes items and itself
+  const observer = new IntersectionObserver((items,observer) =>{
+    //checks each item, if intersecting visisble screen
+    items.forEach(item=>{
+      if(item.isIntersecting){
+      let x = item.target
+      //take src from data-src attribute and add to src (load image)
+      x.src = x.dataset.src;
+      //change from loading to loaded css
+      x.classList.remove('loading');
+      x.classList.add('loaded');
+      //unobserve item (dont want to reload every time)
+      observer.unobserve(x);
+      }
+    });
+  });
+
+  //finally add the observer to each img and
+  lazyimages.forEach((img)=>{
+    observer.observe(img);
+  });
+}
+
+
 
 //employer container
 export function Emplist(){
