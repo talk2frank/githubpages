@@ -37,15 +37,18 @@
   --second-colour: #ffffff;
 }
 
+.themewrap{
+  background-color: var(--main-colour);
+}
+
+body{
+  background-color: var(--main-colour);
+}
 
 /*General Styling*/
 
 html{
   scroll-behavior: smooth;
-}
-
-body{
-  background-color: var(--main-colour);
 }
 
 a{
@@ -313,12 +316,6 @@ body::-webkit-scrollbar-thumb {
   font-size: var(--xs-font-size);
 }
 
-/*AppBody styling*/
-
-.App-body{
-  align-items:flex-start;
-  justify-content: flex-start;
-}
 
 /*cards*/
 

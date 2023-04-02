@@ -14,7 +14,7 @@ import MyFooter, {Contacts, Emplist, MobileNav, MyBanner, MyHeader, Profile, laz
 function App() {
 
   return (
-    <body>
+    <div className='themewrap'>
       <div className="App">
         <MyHeader></MyHeader>
         <MobileNav></MobileNav>
@@ -26,7 +26,7 @@ function App() {
         </main>
         <MyFooter></MyFooter>
       </div>
-    </body>
+    </div>
   );
 }
 

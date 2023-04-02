@@ -9,9 +9,9 @@
  */
 
 import images from '../images/imgindex.js';
-import { employerData, profileData } from '../data/data.js';
+import { bannertext, employerData, profileData } from '../data/data.js';
 
-//header component
+//header component why no work
 export function MyHeader(){
   return(
     <header className='header'>
@@ -53,10 +53,12 @@ export function MobileNav(){
   )
 }
 
+/**
+ * theme toggle functino which
+ */
+export function themeToggle() {
 
-export const themeToggle = () =>{
-
-  //grab any local storage state for theme
+  //grab any local storage state for theme tester
   const theme = localStorage.getItem('theme');
 
   //on mount - if theme is thruthy (exists) then add theme to body
@@ -102,7 +104,7 @@ export function MyBanner(){
           <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
           <h1 className='Banner-title'>Frank Kinsey</h1>
         </div>
-        <p className='Banner-text'>Agile‑Developer • Full‑Stack • Serverless • Cross‑Platform • Business‑Analysis • User‑Design • Interaction‑Design</p>
+        <p className='Banner-text'>{bannertext}</p>
         </div>
       </div>
     )
@@ -144,7 +146,7 @@ export function Profile(){
   //no need to expand observable
   rootMargin: '0px',
   //how much needs to observe before acting - instant is 0
-  threshold: 0,
+  threshold: 0, feef
 */
 export function lazyImages(){
   //select any images with class of lazy -- 

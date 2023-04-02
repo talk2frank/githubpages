@@ -1,8 +1,9 @@
+export const bannertext = 'Agile‑Developer • Full‑Stack • Serverless • Cross‑Platform • Business‑Analysis • User‑Design • Interaction‑Design'
+
 export const profileData = [
     {
-        bio:"My day job involes working in business intellegence/anlytics while I enjoy coding and developing applications in my spare time. I’ve been coding for about 5 years currently working on cross platform and serverless web/mobile application development using various technologies including React Native, Google Firebase, AWS Amplify, and .Net Maui. In summer 2022 I graduated from Leeds Beckett University with a First Class Honours in Digital Technology Solutions",
-        keyskills:"Mobile Application Development · React Native · AWS Amplify · Google Firebase · Azure · Git · React · HTML · CSS · SQL · Power Apps · Power BI"
-    }
+        bio:"My day job involes working in business intellegence/anlytics while I enjoy coding and developing applications in my spare time; currently experimenting with full-stack, cross-platform, and serverless applications. In summer 2022 I graduated from Leeds Beckett University with a First Class Honours in Digital Technology Solutions, a Computer Science degree which combined practical learning in Business Analysis, Information Systems & Interaction Design, Network Design & Cyber Security, Software Development & Engineering",
+        keyskills:"Business Analysis · Agile Project Management · HTML · CSS · JavaScript · React · React Native · NetMaui · AWS Amplify · Google Firebase · Azure · Git · SQL · Power Apps · Power BI · Figma"   }
 ]
 
 export const  employerData=[
