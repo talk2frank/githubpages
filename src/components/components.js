@@ -162,6 +162,7 @@ export function Profile(){
   //how much needs to observe before acting - instant is 0
   threshold: 0, feef
 */
+//this doesn't work in react - needs new approach
 export function lazyImages(){
   //select any images with class of lazy -- 
   const lazyimages = document.querySelectorAll('.lazy');
@@ -170,14 +171,14 @@ export function lazyImages(){
     //checks each item, if intersecting visisble screen
     items.forEach(item=>{
       if(item.isIntersecting){
-      let x = item.target
+      let img = item.target
       //take src from data-src attribute and add to src (load image)
-      x.src = x.dataset.src;
+      img.src = img.dataset.src;
       //change from loading to loaded css
-      x.classList.remove('loading');
-      x.classList.add('loaded');
+      img.classList.remove('loading');
+      img.classList.add('loaded');
       //unobserve item (dont want to reload every time)
-      observer.unobserve(x);
+      observer.unobserve(img);
       }
     });
   });
