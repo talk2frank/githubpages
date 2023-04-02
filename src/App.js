@@ -9,7 +9,7 @@
  */
 
 import './App.css';
-import MyFooter, {Contacts, Emplist, MobileNav, MyBanner, MyHeader, Profile, lazyImages, themeToggle } from './components/components';
+import MyFooter, {Contacts, Emplist, MobileNav, MyBanner, MyHeader, Profile, themeToggle, lazyImages} from './components/components';
 
 function App() {
 
@@ -28,7 +28,7 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 themeToggle();
 lazyImages();

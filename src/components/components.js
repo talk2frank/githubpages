@@ -11,7 +11,7 @@
 import images from '../images/imgindex.js';
 import { bannertext, employerData, profileData } from '../data/data.js';
 
-//header component why no work
+//header component
 export function MyHeader(){
   return(
     <header className='header'>
@@ -21,7 +21,7 @@ export function MyHeader(){
           <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>       
           <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
           <li className='tab'>
-            <button id='themebutton' className='sunbutton'>
+            <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
               <img className='sunimg' src={images.sun} alt='Toggle Theme'></img>
             </button>
           </li>
@@ -44,7 +44,7 @@ export function MobileNav(){
             <a className='mobile_navlink' href='#employment'>Employment</a>
             <a className='mobile_navlink' href='#contact'>Contact</a>
             <div className='mobile_navline'></div>
-            <button id='themebutton' className='sunbutton'>
+            <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
                 <img className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
             </button>
           </div>
@@ -64,7 +64,9 @@ export function themeToggle() {
   //on mount - if theme is thruthy (exists) then add theme to body
   theme && document.body.classList.add('darkmode');
 
-  //handler of theme toggle and update local storage dwqfq
+  /* handler now added directly to element
+  
+  //handler of theme toggle and update local storage
   const handleThemeToggle = () =>{
     document.body.classList.toggle('darkmode');
       if(document.body.classList.contains('darkmode')){
@@ -83,7 +85,19 @@ export function themeToggle() {
   themetoggleBtn.forEach(btn =>{
     btn.addEventListener('click',handleThemeToggle)
   });
+  */
 
+};
+
+const handleThemeToggle = () =>{
+  document.body.classList.toggle('darkmode');
+    if(document.body.classList.contains('darkmode')){
+      localStorage.setItem('theme','darkmode');
+    }
+    else{
+      localStorage.removeItem('theme');
+      document.body.removeAttribute('class');
+    }
 };
 
 
