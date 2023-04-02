@@ -10,6 +10,7 @@
 
 import images from '../images/imgindex.js';
 import { bannertext, employerData, profileData } from '../data/data.js';
+import { useEffect } from 'react';
 
 //header component
 export function MyHeader(){
@@ -129,6 +130,12 @@ export function MyBanner(){
 
 //profile container with lazy loading image (3 classes!)
 export function Profile(){
+
+  useEffect(() => {
+    lazyImages();
+  });
+
+
   return(
       <article id='about' className="profile">
         <img 
