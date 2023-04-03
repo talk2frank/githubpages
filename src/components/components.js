@@ -115,10 +115,10 @@ export function MyBanner(){
     return(
       <div className="Banner">
         <div className='Banner-content'>
-        <div className='Banner-header'>
-          <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
-          <h1 className='Banner-title'>Frank Kinsey</h1>
-        </div>
+          <div className='Banner-header'>
+            <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
+            <h1 className='Banner-title'>Frank Kinsey</h1>
+          </div>
         <p className='Banner-text'>{bannertext}</p>
         </div>
       </div>
