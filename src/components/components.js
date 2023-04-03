@@ -9,7 +9,6 @@
  */
 
 import images from '../images/imgindex.js';
-import { bannertext, employerData, profileData } from '../data/data.js';
 import { useEffect } from 'react';
 
 //header component
@@ -111,7 +110,7 @@ const clickBars = () => {
 }
 */
 
-export function MyBanner(){
+export function MyBanner({string}){
     return(
       <div className="Banner">
         <div className='Banner-content'>
@@ -119,7 +118,7 @@ export function MyBanner(){
             <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
             <h1 className='Banner-title'>Frank Kinsey</h1>
           </div>
-        <p className='Banner-text'>{bannertext}</p>
+        <p className='Banner-text'>{string}</p>
         </div>
       </div>
     )
@@ -129,13 +128,12 @@ export function MyBanner(){
 //cards for data
 
 //profile container with lazy loading image (3 classes!)
-export function Profile(){
+export function Profile({data}){
 
   useEffect(() => {
     lazyImages();
   });
-
-
+  if (!data) return <div/>;
   return(
       <article id='about' className="profile">
         <img 
@@ -144,14 +142,14 @@ export function Profile(){
           data-src={images.workimg} 
           alt='workimage'>
         </img>
-        {profileData.map((data, key) => {
+        {data.map((item, key) => {
           return (
             <div key={key}>
               <h1>About Me</h1>
               <ProfileData
                 key={key}
-                keyskills={data.keyskills}
-                bio={data.bio}
+                keyskills={item.keyskills}
+                bio={item.bio}
               />
             </div>
           );
@@ -199,13 +197,13 @@ export function lazyImages(){
 
 
 //employer container
-export function Emplist(){
-  if (!employerData) return <div/>;
+export function Emplist({data}){
+  if (!data) return <div/>;
   return (
     <section id='employment' className='empsection'>
     <h1>Employment History</h1>
     <ul className='emplist'>
-      {employerData.map((job)=>{
+      {data.map((job)=>{
         return(
         <Job key={job.role} job={job}></Job>
         );

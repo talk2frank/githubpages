@@ -10,6 +10,7 @@
 
 import './App.css';
 import MyFooter, {Contacts, Emplist, MobileNav, MyBanner, MyHeader, Profile} from './components/components';
+import { profileData, employerData, bannertext } from './data/data';
 
 function App() {
 
@@ -18,10 +19,10 @@ function App() {
       <div className="App">
         <MyHeader></MyHeader>
         <MobileNav></MobileNav>
-        <MyBanner></MyBanner>
+        <MyBanner string={bannertext}></MyBanner>
         <main className='AppContent'>
-          <Profile></Profile>
-          <Emplist></Emplist>
+          <Profile data={profileData}></Profile>
+          <Emplist data={employerData}></Emplist>
           <Contacts></Contacts>
         </main>
         <MyFooter></MyFooter>
