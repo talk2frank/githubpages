@@ -257,7 +257,7 @@ export function Contacts(){
   const github = new Contact('https://github.com/talk2frank',images.github,'GitHub');
   
   return(
-      <article id='contact'>
+      <article id='contact' className='contacts'>
         <h1>Contact Information</h1>
         <ul className="contactlist">
           <ContactItem link={email}></ContactItem>

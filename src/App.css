@@ -348,10 +348,16 @@ body::-webkit-scrollbar-thumb {
   margin-bottom: 4px;
 }
 
-.contactlist{
+.contacts{
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  align-items: center;
+}
+
+.contactlist{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
 }
 
 .contactlistitem{
