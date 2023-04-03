@@ -132,7 +132,8 @@ export function Profile({data}){
 
   useEffect(() => {
     lazyImages();
-  });
+  },[]);
+  
   if (!data) return <div/>;
   return(
       <article id='about' className="profile">
