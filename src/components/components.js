@@ -22,7 +22,7 @@ export function MyHeader(){
           <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
           <li className='tab'>
             <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
-              <img className='sunimg' src={images.sun} alt='Toggle Theme'></img>
+              <img aria-label='theme togglebutton' className='sunimg' src={images.sun} alt='Toggle Theme'></img>
             </button>
           </li>
         </ul>
@@ -45,7 +45,7 @@ export function MobileNav(){
             <a className='mobile_navlink' href='#contact'>Contact</a>
             <div className='mobile_navline'></div>
             <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
-                <img className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
+                <img aria-label='theme togglebutton' className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
             </button>
           </div>
       </nav>
