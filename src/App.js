@@ -9,23 +9,27 @@
  */
 
 import './App.css';
-import MyFooter, {Contacts, Emplist, MobileNav, MyBanner, MyHeader, Profile} from './components/components';
-import { profileData, employerData, bannertext } from './data/data';
+import MyFooter, {MobileNav, MyHeader} from './components/components';
+//import { profileData, employerData, bannertext } from './data/data';
+import { Route,Routes } from 'react-router-dom';
+import { Home } from './components/home';
+import Education from './components/education';
 
 function App() {
 
   return (
     <div className='themewrap'>
       <div className="App">
-        <MyHeader></MyHeader>
-        <MobileNav></MobileNav>
-        <MyBanner string={bannertext}></MyBanner>
+        <MyHeader/>
+        <MobileNav/>
         <main className='AppContent'>
-          <Profile data={profileData}></Profile>
-          <Emplist data={employerData}></Emplist>
-          <Contacts></Contacts>
+          <Routes>
+            <Route path="" element={<Home/>}/>
+            <Route path="/githubpages" element={<Home/>}/>
+            <Route path="/education" element={<Education/>}/>
+          </Routes>
         </main>
-        <MyFooter></MyFooter>
+        <MyFooter/>
       </div>
     </div>
   );
