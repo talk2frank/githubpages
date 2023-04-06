@@ -13,7 +13,7 @@ import MyFooter, {MobileNav, MyHeader} from './components/components';
 //import { profileData, employerData, bannertext } from './data/data';
 import { Route,Routes } from 'react-router-dom';
 import { Home } from './components/home';
-import Education from './components/education';
+import {Education, EduItem} from './components/education';
 
 function App() {
 
@@ -26,7 +26,10 @@ function App() {
           <Routes>
             <Route path="" element={<Home/>}/>
             <Route path="/githubpages" element={<Home/>}/>
-            <Route path="/education" element={<Education/>}/>
+            <Route path="/education" element={<Education/>}>
+              <Route path=":id" element={<EduItem/>}></Route>
+            </Route>
+            <Route path="*" element={<Home/>}/>
           </Routes>
         </main>
         <MyFooter/>

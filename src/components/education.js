@@ -1,27 +1,39 @@
+import { Outlet,useParams } from "react-router-dom";
+import { getEduItem, getEducation } from "../data/data";
+
+import { Link } from "react-router-dom";
 
 export function Education(){
+    const education = getEducation();
     return(
         <div>
             <ul>
-                <li>
-                    <h1>Course1</h1>
-                    <h3>It was good here</h3>
-                    <p>Text stuff</p>
+                {education.map((eduitem)=>(
+                <li key={eduitem.course}>
+                    <Link to={eduitem.course}>{eduitem.course}</Link>
+                    <p>{eduitem.trainer}</p>
                 </li>
-                <li>
-                    <h1>Course2</h1>
-                    <h3>It was good here</h3>
-                    <p>Text stuff</p>
-                </li>
-                <li>
-                    <h1>Course2</h1>
-                    <h3>It was good here</h3>
-                    <p>Text stuff</p>
-                </li>
+                ))}
             </ul>
+            <Outlet></Outlet>
         </div>
     );
 };
+
+export function EduItem(){
+   const {id} = useParams();
+    const eduitem = getEduItem(id);
+
+    console.log(useParams);
+
+    return(
+        <div>
+            <h1>{eduitem.course}</h1>
+            <h3>{eduitem.trainer}</h3>
+            <p>{eduitem.description}</p>
+        </div>
+    )
+}
 
 
 export default Education;

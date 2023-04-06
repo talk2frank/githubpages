@@ -39,3 +39,12 @@ export const educationData=[
             description:"Degree in housing, health, social development, mobility, urban design and regeneration, and sustainability"
         }
 ]
+
+
+export function getEduItem(id){
+    return educationData.find(({course})=> course === id);
+}
+
+export function getEducation(){
+    return educationData.map(({trainer,course,period,description})=> ({trainer,course,period,description}));
+}

@@ -17,8 +17,9 @@ export function MyHeader(){
     <header className='header'>
       <nav>
         <ul className='header_list'>
-          <li className='tab'><a className='tablink' href='#about'>About</a></li>
-          <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>       
+          <li className='tab'><a className='tablink' href='/githubpages'>Home</a></li>
+          <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>        
+          <li className='tab'><a className='tablink' href='/education'>Education</a></li>     
           <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
           <li className='tab'>
             <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
