@@ -28,6 +28,7 @@ function App() {
             <Route path="/githubpages" element={<Home/>}/>
             <Route path="/education" element={<Education/>}>
               <Route path=":id" element={<EduItem/>}></Route>
+              <Route index element={<h3>Please choose a course from above</h3>}></Route>
             </Route>
             <Route path="*" element={<Home/>}/>
           </Routes>

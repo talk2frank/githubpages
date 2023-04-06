@@ -10,16 +10,19 @@
 
 import images from '../images/imgindex.js';
 import { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 //header component
 export function MyHeader(){
+  const getActive = ({isActive}) => (isActive ? "activeLink":null);
+
   return(
     <header className='header'>
       <nav>
         <ul className='header_list'>
-          <li className='tab'><a className='tablink' href='/githubpages'>Home</a></li>
-          <li className='tab'><a className='tablink' href='#employment'>Employment</a></li>        
-          <li className='tab'><a className='tablink' href='/education'>Education</a></li>     
+          <li className='tab'><NavLink className={getActive} to='/githubpages'>Home</NavLink></li>
+          <li className='tab'><NavLink className={getActive} to='/employment'>Employment</NavLink></li>        
+          <li className='tab'><NavLink className={getActive} to='/education'>Education</NavLink></li>     
           <li className='tab'><a className='tablink' href='#contact'>Contact</a></li>
           <li className='tab'>
             <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
@@ -285,7 +288,7 @@ export function ContactItem({link}){
 export function MyFooter(){
     return(
         <footer className='App-footer'>
-        <p className='AppFooter-tagline'>© 2023, Frank Kinsey. This work is licensed under a Creative Commons Attribution 4.0 International License&nbsp;</p>
+        <p className='AppFooter-tagline'>&copy;2023, Frank Kinsey. This work is licensed under a Creative Commons Attribution 4.0 International License&nbsp;</p>
         <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
           <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
         </a>

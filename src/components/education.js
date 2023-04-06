@@ -1,7 +1,6 @@
-import { Outlet,useParams } from "react-router-dom";
+import { Outlet,useParams, NavLink } from "react-router-dom";
 import { getEduItem, getEducation } from "../data/data";
 
-import { Link } from "react-router-dom";
 
 export function Education(){
     const education = getEducation();
@@ -10,7 +9,10 @@ export function Education(){
             <ul>
                 {education.map((eduitem)=>(
                 <li key={eduitem.course}>
-                    <Link to={eduitem.course}>{eduitem.course}</Link>
+                    <NavLink 
+                        className={({isActive}) => isActive ? "activeLink" : null}
+                        to={eduitem.course}>{eduitem.course}
+                    </NavLink>
                     <p>{eduitem.trainer}</p>
                 </li>
                 ))}

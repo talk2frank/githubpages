@@ -112,6 +112,11 @@ ul{
   text-decoration: none;
 }
 
+.activeLink{
+  color: var(--purple-font);
+  text-decoration: underline;
+}
+
 .loading{
   filter:blur(15px) grayscale(100%);
 }
@@ -309,7 +314,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   justify-content:center;
   align-items: center;
-  height: 55px;
+  height: 60px;
 }
 
 .AppFooter-tagline{
@@ -352,11 +357,12 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 4px;
 }
 
 .contactlist{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 1em;
 }
 
@@ -389,24 +395,14 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     list-style: none;
     padding-right: 20px;
-    gap:0.5em;
+    gap:1em;
   }
-  
-  .tab{
-    border-top: 2px solid var(--lightgrey-colour);
-    border-left: 2px solid var(--lightgrey-colour);
-    border-right: 2px solid var(--lightgrey-colour);
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    padding: 0 4px 0 4px;
-  }
-  
+
   .tablink{
-    color:var(--blue-colour); 
+    color: var(--blue-colour); 
     font-size: var(--s-font-size);
     font-weight: 500;
     letter-spacing: -0.03em;
-    transition:color 0.5s;
   }
   
   .tablink:hover{
@@ -439,6 +435,10 @@ body::-webkit-scrollbar-thumb {
   .workimage{
     width: 50%;
     object-fit: contain;
+  }
+
+  .contactlist{
+    flex-direction: row;
   }
 
 }
