@@ -14,6 +14,7 @@ import MyFooter, {MobileNav, MyHeader} from './components/components';
 import { Route,Routes } from 'react-router-dom';
 import { Home } from './components/home';
 import {Education, EduItem} from './components/education';
+import Employment from './components/employment';
 
 function App() {
 
@@ -24,13 +25,18 @@ function App() {
         <MobileNav/>
         <main className='AppContent'>
           <Routes>
-            <Route path="" element={<Home/>}/>
-            <Route path="/githubpages" element={<Home/>}/>
-            <Route path="/education" element={<Education/>}>
-              <Route path=":id" element={<EduItem/>}></Route>
-              <Route index element={<h3>Please choose a course from above</h3>}></Route>
-            </Route>
             <Route path="*" element={<Home/>}/>
+            <Route path="/githubpages" element={<Home/>}>
+              <Route path="*" element={<Home/>}/>
+            </Route>
+            
+            <Route path="/employment" element={<Employment/>}>
+              <Route path="*" element={<Employment/>}/>
+            </Route>
+            <Route path="/education" element={<Education/>}>
+              <Route path=":id" element={<EduItem/>}/>     
+              <Route index element={<h3>Please choose a course from above</h3>}/>
+            </Route>
           </Routes>
         </main>
         <MyFooter/>

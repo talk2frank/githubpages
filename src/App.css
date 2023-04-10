@@ -115,6 +115,9 @@ ul{
 .activeLink{
   color: var(--purple-font);
   text-decoration: underline;
+  font-size: var(--s-font-size);
+  font-weight: 500;
+  letter-spacing: -0.03em;
 }
 
 .loading{

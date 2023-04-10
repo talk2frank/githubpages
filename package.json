@@ -1,7 +1,7 @@
 {
   "name": "githubpage",
   "homepage": "https://talk2frank.github.io/githubpages/",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@svgr/webpack": "^7.0.0",

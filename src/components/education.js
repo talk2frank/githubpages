@@ -1,3 +1,10 @@
+/**
+ * Education Components for FK github page
+ * @description Provides components for application
+ * @author Frank Kinsey
+ * 
+ */
+
 import { Outlet,useParams, NavLink } from "react-router-dom";
 import { getEduItem, getEducation } from "../data/data";
 

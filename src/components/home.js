@@ -2,22 +2,17 @@
  * home components for FK github page
  * @description Provides components for application
  * @author Frank Kinsey
- * @version 1.0
- * @see {@link https://github.com/talk2frank/githubpages}
- * @since 1.0
- * 
  */
 
 import images from '../images/imgindex.js';
 import { useEffect } from 'react';
-import { profileData, employerData, bannertext } from '../data/data.js';
+import { profileData, bannertext } from '../data/data.js';
 
 export function Home(){
     return(
     <div>
         <MyBanner string={bannertext}></MyBanner>
         <Profile data={profileData}></Profile>
-        <Emplist data={employerData}></Emplist>
         <Contacts></Contacts>
     </div>
 )};
@@ -109,25 +104,6 @@ export function lazyImages(){
 }
 
 
-
-//employer container
-export function Emplist({data}){
-  if (!data) return <div/>;
-  return (
-    <section id='employment' className='empsection'>
-    <h1>Employment History</h1>
-    <ul className='emplist'>
-      {data.map((job)=>{
-        return(
-        <Job key={job.role} job={job}></Job>
-        );
-      })}
-    </ul>
-    </section>
-  );
-};
-
-
 //component classes for handling items
 
 //data holding component for profile data
@@ -141,19 +117,6 @@ export function ProfileData({bio, keyskills}){
   );
 };
 
-//data holding component for a job
-export function Job({job}){
-  if (!job) return <div/>;
-  return (
-    <li className='emplistitem' key={job.role}>
-      <h2>{job.role}</h2>
-      <h5>{job.period}</h5>
-      <h3>{job.employer}</h3>
-      <h4>{job.skills}</h4>
-      <p>{job.description}</p>  
-    </li>
-  );
-};
 
 //class for a contact object
 class Contact{
@@ -195,4 +158,4 @@ export function ContactItem({link}){
 
 
 
-export default MyBanner
+export default Home
