@@ -1,22 +1,20 @@
-/**
- * Education Components for FK github page
- * @description Provides components for application
- * @author Frank Kinsey
- * 
- */
-
+/*
 import { Outlet,useParams, NavLink } from "react-router-dom";
 import { getEduItem, getEducation } from "../data/data";
 
 
 export function Education(){
     const education = getEducation();
-    if(!education) return(<div></div>);
     return(
         <div>
             <ul>
                 {education.map((eduitem)=>(
                 <li key={eduitem.course}>
+                    <NavLink 
+                        className={({isActive}) => isActive ? "activeLink" : null}
+                        to={eduitem.course}>{eduitem.course}
+                    </NavLink>
+                    <p>{eduitem.trainer}</p>
                 </li>
                 ))}
             </ul>
@@ -42,3 +40,5 @@ export function EduItem(){
 
 
 export default Education;
+
+*/

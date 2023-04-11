@@ -32,15 +32,6 @@
 } 
 
 
-.darkmode{
-  --main-colour:#1f1f1f;
-  --second-colour: #ffffff;
-}
-
-.themewrap{
-  background-color: var(--main-colour);
-}
-
 body{
   background-color: var(--main-colour);
 }
@@ -112,6 +103,26 @@ ul{
   text-decoration: none;
 }
 
+.darkmode{
+  --main-colour:#1f1f1f;
+  --second-colour: #ffffff;
+}
+
+.themewrap{
+  background-color: var(--main-colour);
+}
+
+.tablink{
+  color: var(--blue-colour); 
+  font-size: var(--s-font-size);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.tablink:hover{
+  color: var(--purple-font);
+}
+
 .activeLink{
   color: var(--purple-font);
   text-decoration: underline;
@@ -161,7 +172,7 @@ body::-webkit-scrollbar-thumb {
 
 .header{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -260,9 +271,6 @@ body::-webkit-scrollbar-thumb {
 .Banner {
   display: flex;
   flex-direction: row;
-  border-radius: 10px;
-  border-top:2px solid var(--lightgrey-colour);
-  border-bottom:2px solid var(--lightgrey-colour);
   align-items:center;
   justify-content: center;
   margin-bottom: 4px;
@@ -293,6 +301,12 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.title{
+  font-family:var(--header-font);
+  font-weight:500;
+  font-size: var(--lrg-font-size);
 }
 
 .Banner-title{
@@ -399,17 +413,6 @@ body::-webkit-scrollbar-thumb {
     list-style: none;
     padding-right: 20px;
     gap:1em;
-  }
-
-  .tablink{
-    color: var(--blue-colour); 
-    font-size: var(--s-font-size);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-  }
-  
-  .tablink:hover{
-    color: var(--purple-font);
   }
   
   .sunimg{

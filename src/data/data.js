@@ -40,6 +40,9 @@ export const educationData=[
         }
 ]
 
+export function getEmployment(){
+    return employerData.map(({employer,role,period,skills,description})=> ({employer,role,period,skills,description}));
+}
 
 export function getEduItem(id){
     return educationData.find(({course})=> course === id);

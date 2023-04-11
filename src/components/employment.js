@@ -5,25 +5,27 @@
  * 
  */
 
-import { employerData} from '../data/data.js';
+import { employerData, getEmployment} from '../data/data.js';
 
 export function Employment(){
     return(
     <div>
-        <Emplist data={employerData}></Emplist>
+        <Emplist></Emplist>
     </div>
     );
 };
 
 
 //employer container
-export function Emplist({data}){
-    if (!data) return <div/>;
+export function Emplist(){
+  const empdata = getEmployment();
+
+    if (!empdata) return <div/>;
     return (
       <section id='employment' className='empsection'>
       <h1>Employment History</h1>
       <ul className='emplist'>
-        {data.map((job)=>{
+        {empdata.map((job)=>{
           return(
           <Job key={job.role} job={job}></Job>
           );

@@ -10,28 +10,35 @@ import { NavLink } from 'react-router-dom';
 
 //header component
 export function MyHeader(){
+  //navlink active indicator and style selector
   const getActive = ({isActive}) => (isActive ? "activeLink":"tablink");
 
   return(
+    <div>
     <header className='header'>
-      <nav>
-        <ul className='header_list'>
-          <li className='tab'><NavLink className={getActive} to='/githubpages'>Home</NavLink></li>
-          <li className='tab'><NavLink className={getActive} to='/employment'>Employment</NavLink></li>        
-          <li className='tab'><NavLink className={getActive} to='/education'>Education</NavLink></li>     
-          <li className='tab'>
-            <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
-              <img aria-label='theme togglebutton' className='sunimg' src={images.sun} alt='Toggle Theme'></img>
-            </button>
-          </li>
-        </ul>
-      </nav>
+        <a className='title' href='/githubpages'>Frank's Profile</a>
+        <nav>
+          <ul className='header_list'>
+            <li><NavLink className={getActive} to='/githubpages'>About</NavLink></li>
+            <li><NavLink className={getActive} to='/employment'>Employment</NavLink></li>        
+            <li><NavLink className={getActive} to='/education'>Education</NavLink></li>     
+            <li>
+              <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
+                <img aria-label='theme togglebutton' className='sunimg' src={images.sun} alt='Toggle Theme'></img>
+              </button>
+            </li>
+          </ul>
+        </nav>
     </header>
+    <hr></hr>
+    </div>
   )
 }
 
 
 export function MobileNav(){
+  const getActive = ({isActive}) => (isActive ? "activeLink":"tablink");
+
   return(
     <div className='mobile_nav'>
        <button id='barbutton' className='bars'>
@@ -39,8 +46,9 @@ export function MobileNav(){
       </button>
       <nav className='mobile_navmenu'>
           <div className='movile_navcontent'>
-            <a className='mobile_navlink' href='#about'>About</a>
-            <a className='mobile_navlink' href='#employment'>Employment</a>
+            <NavLink className={getActive} to='/githubpages'>About</NavLink>
+            <NavLink className={getActive} to='/employment'>Employment</NavLink>
+            <NavLink className={getActive} to='/education'>Education</NavLink>
             <div className='mobile_navline'></div>
             <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
                 <img aria-label='theme togglebutton' className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
@@ -87,6 +95,9 @@ export function themeToggle() {
 
 };
 
+/**
+ * stores theme in local storage for persistence
+ */
 const handleThemeToggle = () =>{
   document.body.classList.toggle('darkmode');
     if(document.body.classList.contains('darkmode')){
