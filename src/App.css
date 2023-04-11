@@ -168,19 +168,26 @@ body::-webkit-scrollbar-thumb {
   padding-top: 4px;
   padding-left: 8px;
   padding-right: 8px;
-}
-
-.header{
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-.header_list{
+.headercontainer{
   display: none;
 }
 
 /*mobile nav bar*/
+
+.mobilecontainer{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  position: fixed;
+  top:0;
+  background-color: var(--main-colour);
+  z-index: 999;
+  border-bottom: 1px solid var(--blue-colour);
+}
 
 .mobile_nav{
   display: flex;
@@ -220,6 +227,10 @@ body::-webkit-scrollbar-thumb {
   font-family: inherit; /* Important for vertical align on mobile phones */
 }
 
+.bars:hover .mobile_navmenu {
+  display: block;
+  z-index: 999;
+}
 
 .mobile_nav:hover .mobile_navmenu {
   display: block;
@@ -275,8 +286,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   margin-bottom: 4px;
   padding: 4px;
-  height: 92vh;
-  
+  height: 98vh;
 }
 
 
@@ -332,6 +342,8 @@ body::-webkit-scrollbar-thumb {
   justify-content:center;
   align-items: center;
   height: 60px;
+  width: 100%;
+  border-top: 1px solid var(--blue-colour);
 }
 
 .AppFooter-tagline{
@@ -352,6 +364,12 @@ body::-webkit-scrollbar-thumb {
 
 .empsection{
   padding: 16px;
+  margin-top: 20px;
+}
+
+.edsection{
+  padding: 16px;
+  margin-top: 20px;
 }
 
 .workimage{
@@ -368,6 +386,12 @@ body::-webkit-scrollbar-thumb {
   border-top: 2px solid var(--blue-colour);
   list-style-type: none;
   margin-bottom: 4px;
+}
+
+.edListItem{
+    border-top: 2px solid var(--blue-colour);
+    list-style-type: none;
+    margin-bottom: 4px;
 }
 
 .contacts{
@@ -407,6 +431,23 @@ body::-webkit-scrollbar-thumb {
     max-width: 640px;
   }
 
+  .mobilecontainer{
+    display: none;
+  }
+
+  .headercontainer{
+    display:block;
+    width: 100%;
+    border-bottom: 1px solid var(--blue-colour);
+
+  }
+
+  .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .header_list{
     display: flex;
     align-items: center;
@@ -424,10 +465,6 @@ body::-webkit-scrollbar-thumb {
     display: block;
     width: 24px;
     cursor: pointer;
-  }
-
-  .mobile_nav{
-    display:none;
   }
 
   .profile{

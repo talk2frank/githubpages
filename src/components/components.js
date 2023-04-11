@@ -14,23 +14,20 @@ export function MyHeader(){
   const getActive = ({isActive}) => (isActive ? "activeLink":"tablink");
 
   return(
-    <div>
-    <header className='header'>
+    <div className='headercontainer'>
+      <header className='header'>
         <a className='title' href='/githubpages'>Frank's Profile</a>
-        <nav>
-          <ul className='header_list'>
-            <li><NavLink className={getActive} to='/githubpages'>About</NavLink></li>
-            <li><NavLink className={getActive} to='/employment'>Employment</NavLink></li>        
-            <li><NavLink className={getActive} to='/education'>Education</NavLink></li>     
-            <li>
-              <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
-                <img aria-label='theme togglebutton' className='sunimg' src={images.sun} alt='Toggle Theme'></img>
-              </button>
-            </li>
-          </ul>
-        </nav>
-    </header>
-    <hr></hr>
+            <ul className='header_list'>
+              <li><NavLink className={getActive} to='/githubpages'>About</NavLink></li>
+              <li><NavLink className={getActive} to='/employment'>Employment</NavLink></li>        
+              <li><NavLink className={getActive} to='/education'>Education</NavLink></li>     
+              <li>
+                <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
+                  <img aria-label='theme togglebutton' className='sunimg' src={images.sun} alt='Toggle Theme'></img>
+                </button>
+              </li>
+            </ul>
+      </header>
     </div>
   )
 }
@@ -40,21 +37,24 @@ export function MobileNav(){
   const getActive = ({isActive}) => (isActive ? "activeLink":"tablink");
 
   return(
-    <div className='mobile_nav'>
-       <button id='barbutton' className='bars'>
-          <img src={images.bars} alt='menu'></img>
-      </button>
-      <nav className='mobile_navmenu'>
-          <div className='movile_navcontent'>
-            <NavLink className={getActive} to='/githubpages'>About</NavLink>
-            <NavLink className={getActive} to='/employment'>Employment</NavLink>
-            <NavLink className={getActive} to='/education'>Education</NavLink>
-            <div className='mobile_navline'></div>
-            <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
-                <img aria-label='theme togglebutton' className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
-            </button>
-          </div>
-      </nav>
+    <div className='mobilecontainer'>
+      <a className='title' href='/githubpages'>Frank's Profile</a>
+      <div className='mobile_nav'>
+        <button id='barbutton' className='bars'>
+            <img src={images.bars} alt='menu'></img>
+        </button>
+        <nav className='mobile_navmenu'>
+            <div className='movile_navcontent'>
+              <NavLink className={getActive} to='/githubpages'>About</NavLink>
+              <NavLink className={getActive} to='/employment'>Employment</NavLink>
+              <NavLink className={getActive} to='/education'>Education</NavLink>
+              <div className='mobile_navline'></div>
+              <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
+                  <img aria-label='theme togglebutton' className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
+              </button>
+            </div>
+        </nav>
+      </div>
     </div>
   )
 }

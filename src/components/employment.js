@@ -5,7 +5,7 @@
  * 
  */
 
-import { employerData, getEmployment} from '../data/data.js';
+import {getEmployment} from '../data/data.js';
 
 export function Employment(){
     return(
