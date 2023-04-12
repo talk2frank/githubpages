@@ -10,7 +10,7 @@
 
   --blue-colour:#1083cb;
   --lightblue-colour:#72d0ff;
-  --purple-font:#8750bb;
+  --purple-font:#c130a1;
 
   /*fonts*/
   --header-font:'Trebuchet MS';
@@ -69,12 +69,12 @@ h1{
 }
 
 h2 {
-  color:var(--grey-colour);
+  color:var(--blue-colour);
   font-size: var(--lrg-font-size);
 }
 
 h3 {
-  color: var(--grey-colour);
+  color: var(--purple-font);
   font-size: var(--med-font-size);
   font-weight: 500;
 }
@@ -86,7 +86,7 @@ h4 {
 }
 
 h5 {
-  color:var(--purple-font);
+  color:var(--grey-colour);
   font-size: var(--body-font-size);
   font-weight: 600;
 }
@@ -108,9 +108,7 @@ ul{
   --second-colour: #ffffff;
 }
 
-.themewrap{
-  background-color: var(--main-colour);
-}
+
 
 .tablink{
   color: var(--blue-colour); 
@@ -181,9 +179,11 @@ body::-webkit-scrollbar-thumb {
 .mobilecontainer{
   display: flex;
   flex-direction: row;
-  width: 90%;
-  position: fixed;
+  width: 100%;
+  position: sticky;
   top:0;
+  padding-top: 4px;
+  height: 35px;
   background-color: var(--main-colour);
   z-index: 999;
   border-bottom: 1px solid var(--blue-colour);
@@ -358,7 +358,6 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   align-items: flex-start;
   padding: 16px;
-  margin-bottom: 4px;
   gap:2em;
 }
 
@@ -378,27 +377,20 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-.emplist{
-  padding: 0 0 0 0;
-}
-
-.emplistitem{
-  border-top: 2px solid var(--blue-colour);
+.card{
   list-style-type: none;
   margin-bottom: 4px;
-}
-
-.edListItem{
-    border-top: 2px solid var(--blue-colour);
-    list-style-type: none;
-    margin-bottom: 4px;
+  border-radius: 10px;
+  padding: 6px;
+  box-shadow: 2px 2px 4px 2px var(--grey-colour);
+  margin-bottom: 8px;
 }
 
 .contacts{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 4px;
+  align-items:center;
+  margin-top: 20px; 
 }
 
 .contactlist{

@@ -44,6 +44,7 @@ export function getEmployment(){
     return employerData.map(({employer,role,period,skills,description})=> ({employer,role,period,skills,description}));
 }
 
+//getone educstion item based on course name
 export function getEduItem(id){
     return educationData.find(({course})=> course === id);
 }
@@ -51,3 +52,4 @@ export function getEduItem(id){
 export function getEducation(){
     return educationData.map(({trainer,course,period,description})=> ({trainer,course,period,description}));
 }
+

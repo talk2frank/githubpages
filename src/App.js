@@ -10,16 +10,14 @@
 
 import './App.css';
 import MyFooter, {MobileNav, MyHeader} from './components/components';
-//import { profileData, employerData, bannertext } from './data/data';
 import { Route,Routes } from 'react-router-dom';
-import { Home } from './components/home';
-import {Education} from './components/education';
+import Home from './components/home';
+import Education from './components/education';
 import Employment from './components/employment';
 
 function App() {
 
   return (
-    <div className='themewrap'>
       <div className="App">
         <MyHeader/>
         <MobileNav/>
@@ -37,7 +35,6 @@ function App() {
         </main>
         <MyFooter/>
       </div>
-    </div>
   );
 };
 

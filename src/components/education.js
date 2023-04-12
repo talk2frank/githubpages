@@ -39,7 +39,7 @@ export function EduList(){
 export function EdItem({ed}){
     if (!ed) return <div/>;
     return (
-      <li className='edListItem' key={ed.course}>
+      <li className='card' key={ed.course}>
         <h2>{ed.course}</h2>
         <h5>{ed.period}</h5>
         <h3>{ed.trainer}</h3>

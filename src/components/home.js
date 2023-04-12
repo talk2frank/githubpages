@@ -13,7 +13,7 @@ export function Home(){
     <div>
         <MyBanner string={bannertext}></MyBanner>
         <Profile data={profileData}></Profile>
-        <Contacts></Contacts>
+        
     </div>
 )};
 
@@ -27,6 +27,7 @@ export function MyBanner({string}){
             <h1 className='Banner-title'>Frank Kinsey</h1>
           </div>
         <p className='Banner-text'>{string}</p>
+        <Contacts></Contacts>
         </div>
       </div>
     )
@@ -65,7 +66,7 @@ export function Profile({data}){
         })}
       </article>
   )
-}
+};
 
 /* Observer function to lazy load images
   to modify observer if needed - in second arg of IntersectionObserver

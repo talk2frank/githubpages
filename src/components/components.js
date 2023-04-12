@@ -60,7 +60,7 @@ export function MobileNav(){
 }
 
 /**
- * theme toggle functino which
+ * theme toggle functino which sets up theme on initialisation
  */
 export function themeToggle() {
 
@@ -71,7 +71,6 @@ export function themeToggle() {
   theme && document.body.classList.add('darkmode');
 
   /* handler now added directly to element
-  
   //handler of theme toggle and update local storage
   const handleThemeToggle = () =>{
     document.body.classList.toggle('darkmode');
@@ -92,11 +91,11 @@ export function themeToggle() {
     btn.addEventListener('click',handleThemeToggle)
   });
   */
-
 };
 
+
 /**
- * stores theme in local storage for persistence
+ * stores theme in local storage for persistence and sets theme based on local storage
  */
 const handleThemeToggle = () =>{
   document.body.classList.toggle('darkmode');
@@ -131,5 +130,31 @@ export function MyFooter(){
       </footer>
     );
 };
+
+
+//https://datausa.io/api/data?measures=Population
+//https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+/* test api fetcher - to develop for data when imported from URL
+
+export function getApiData() {
+ if(window.navigator.onLine){
+    getData();
+  }
+};
+
+export const getData = async () => {
+  const response = await fetch('https://datausa.io/api/data?measures=Population');
+
+  if(!response.ok){throw new Error(`HTTP error: ${response.status}`)};
+    const myJson = await response.json(); 
+    const pops = myJson.data;
+    pops.map((pop)=>{
+    return(
+      console.log(pop)
+      );
+    });
+};
+*/
+
 
 export default MyFooter

@@ -39,7 +39,7 @@ export function Emplist(){
 export function Job({job}){
     if (!job) return <div/>;
     return (
-      <li className='emplistitem' key={job.role}>
+      <li className='card' key={job.role}>
         <h2>{job.role}</h2>
         <h5>{job.period}</h5>
         <h3>{job.employer}</h3>
