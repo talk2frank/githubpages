@@ -8,9 +8,11 @@
   --grey-colour:#7A7B7A;
   --lightgrey-colour:#b5b5b5;
 
-  --blue-colour:#1083cb;
+  --orange-colour:#d66e13;
   --lightblue-colour:#72d0ff;
-  --purple-font:#c130a1;
+  --blue-colour:#1083cb;
+
+  
 
   /*fonts*/
   --header-font:'Trebuchet MS';
@@ -43,12 +45,12 @@ html{
 }
 
 a{
-  color:var(--blue-colour); 
+  color:var(--orange-colour); 
   text-decoration: none;
 }
 
 a:hover{
-  color: var(--purple-font);
+  color: var(--blue-colour);
 }
 
 button{
@@ -62,7 +64,7 @@ img{
 }
 
 h1{
-  color: var(--purple-font);
+  color: var(--blue-colour);
   font-size: var(--lrg-font-size); 
   font-family: var(--header-font);
   margin-bottom: 4px;
@@ -74,7 +76,7 @@ h2 {
 }
 
 h3 {
-  color: var(--purple-font);
+  color: var(--orange-colour);
   font-size: var(--med-font-size);
   font-weight: 500;
 }
@@ -111,18 +113,18 @@ ul{
 
 
 .tablink{
-  color: var(--blue-colour); 
+  color: var(--orange-colour); 
   font-size: var(--s-font-size);
   font-weight: 500;
   letter-spacing: -0.03em;
 }
 
 .tablink:hover{
-  color: var(--purple-font);
+  color: var(--blue-colour);
 }
 
 .activeLink{
-  color: var(--purple-font);
+  color: var(--blue-colour);
   text-decoration: underline;
   font-size: var(--s-font-size);
   font-weight: 500;
@@ -148,8 +150,8 @@ body::-webkit-scrollbar-track {
 }
  
 body::-webkit-scrollbar-thumb {
-  background-color: var(--purple-font);
-  outline: 1px solid var(--purple-font);
+  background-color: var(--blue-colour);
+  outline: 1px solid var(--blue-colour);
 }
 
 
@@ -186,7 +188,7 @@ body::-webkit-scrollbar-thumb {
   height: 35px;
   background-color: var(--main-colour);
   z-index: 999;
-  border-bottom: 1px solid var(--blue-colour);
+  border-bottom: 1px solid var(--orange-colour);
 }
 
 .mobile_nav{
@@ -323,7 +325,7 @@ body::-webkit-scrollbar-thumb {
   font-family:var(--header-font);
   font-weight:500;
   font-size: 3rem;
-  color:var(--purple-font);
+  color:var(--blue-colour);
   transition: color 1s;
 }
 
@@ -343,7 +345,7 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
   height: 60px;
   width: 100%;
-  border-top: 1px solid var(--blue-colour);
+  border-top: 1px solid var(--orange-colour);
 }
 
 .AppFooter-tagline{
@@ -380,10 +382,10 @@ body::-webkit-scrollbar-thumb {
 .card{
   list-style-type: none;
   margin-bottom: 4px;
+  border: 1px solid var(--orange-colour);
   border-radius: 10px;
-  padding: 6px;
-  box-shadow: 2px 2px 4px 2px var(--grey-colour);
-  margin-bottom: 8px;
+  padding: 8px;
+  margin-bottom: 18px;
 }
 
 .contacts{
@@ -430,7 +432,7 @@ body::-webkit-scrollbar-thumb {
   .headercontainer{
     display:block;
     width: 100%;
-    border-bottom: 1px solid var(--blue-colour);
+    border-bottom: 1px solid var(--orange-colour);
 
   }
 
