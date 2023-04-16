@@ -44,6 +44,7 @@ html{
   scroll-behavior: smooth;
 }
 
+
 a{
   color:var(--orange-colour); 
   text-decoration: none;
@@ -175,6 +176,24 @@ body::-webkit-scrollbar-thumb {
 .headercontainer{
   display: none;
 }
+
+.tooltip{
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover{
+  visibility: visible; 
+}
+
 
 /*mobile nav bar*/
 
@@ -353,7 +372,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/*cards*/
 
 .profile{
   display: flex;
@@ -382,7 +400,7 @@ body::-webkit-scrollbar-thumb {
 .card{
   list-style-type: none;
   margin-bottom: 4px;
-  border: 1px solid var(--orange-colour);
+  border: 1px solid var(--lightgrey-colour);
   border-radius: 10px;
   padding: 8px;
   margin-bottom: 18px;

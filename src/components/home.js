@@ -5,7 +5,6 @@
  */
 
 import images from '../images/imgindex.js';
-import { useEffect } from 'react';
 import { profileData, bannertext } from '../data/data.js';
 
 export function Home(){
@@ -23,7 +22,7 @@ export function MyBanner({string}){
       <div className="Banner">
         <div className='Banner-content'>
           <div className='Banner-header'>
-            <img src={images.me} className="Banner-profilepic" alt="Profile Pic" />
+            <img src={images.me} className="Banner-profilepic" alt="Frank's Profile" />
             <h1 className='Banner-title'>Frank Kinsey</h1>
           </div>
         <p className='Banner-text'>{string}</p>
@@ -39,9 +38,6 @@ export function MyBanner({string}){
 //profile container with lazy loading image (3 classes!)
 export function Profile({data}){
 
-  useEffect(() => {
-    lazyImages();
-  },[]);
   
   if (!data) return <div/>;
   return(
@@ -50,7 +46,7 @@ export function Profile({data}){
           className='workimage lazy loading'
           src={'https://via.placeholder.com/606x461'}
           data-src={images.workimg} 
-          alt='workimage'>
+          alt='a work desk'>
         </img>
         {data.map((item, key) => {
           return (
@@ -77,33 +73,6 @@ export function Profile({data}){
   //how much needs to observe before acting - instant is 0
   threshold: 0, feef
 */
-//this doesn't work in react - needs new approach
-export function lazyImages(){
-  //select any images with class of lazy -- 
-  const lazyimages = document.querySelectorAll('.lazy');
-  //int observer object takes items and itself
-  const observer = new IntersectionObserver((items,observer) =>{
-    //checks each item, if intersecting visisble screen
-    items.forEach(item=>{
-      if(item.isIntersecting){
-      let img = item.target
-      //take src from data-src attribute and add to src (load image)
-      img.src = img.dataset.src;
-      //change from loading to loaded css
-      img.classList.remove('loading');
-      img.classList.add('loaded');
-      //unobserve item (dont want to reload every time)
-      observer.unobserve(img);
-      }
-    });
-  });
-
-  //finally add the observer to each img and
-  lazyimages.forEach((img)=>{
-    observer.observe(img);
-  });
-}
-
 
 //component classes for handling items
 

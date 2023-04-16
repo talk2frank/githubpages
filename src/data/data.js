@@ -3,7 +3,7 @@ export const bannertext = '< Agile‑Developer • Full‑Stack • Serverless �
 export const profileData = [
         {
         bio:"My day job involes working in business intellegence/anlytics while I enjoy coding and developing applications in my spare time; currently experimenting with full-stack, cross-platform, and serverless applications. In summer 2022 I graduated from Leeds Beckett University with a First Class Honours in Digital Technology Solutions, a Computer Science degree which combined practical learning in Business Analysis, Information Systems & Interaction Design, Network Design & Cyber Security, Software Development & Engineering",
-        keyskills:"Business Analysis · Agile Project Management · HTML · CSS · JavaScript · React · React Native · NetMaui · AWS Amplify · Google Firebase · Azure · Git · SQL · Power Apps · Power BI · Figma"   
+        keyskills:"Business Analysis · Agile Project Management · HTML · CSS · JavaScript · React · React Native · NetMaui · AWS Amplify · Google Firebase · Azure · Git · SQL · Power Apps · Power BI · Figma · Photoshop"   
         }
 ]
 

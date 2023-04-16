@@ -8,6 +8,33 @@
 import images from '../images/imgindex.js';
 import { NavLink } from 'react-router-dom';
 
+//lazy loading for images
+export function lazyImages(){
+  //select any images with class of lazy -- 
+  const lazyimages = document.querySelectorAll('.lazy');
+  //int observer object takes items and itself
+  const observer = new IntersectionObserver((items,observer) =>{
+    //checks each item, if intersecting visisble screen
+    items.forEach(item=>{
+      if(item.isIntersecting){
+      let img = item.target
+      //take src from data-src attribute and add to src (load image)
+      img.src = img.dataset.src;
+      //change from loading to loaded css
+      img.classList.remove('loading');
+      img.classList.add('loaded');
+      //unobserve item (dont want to reload every time)
+      observer.unobserve(img);
+      }
+    });
+  });
+
+  //finally add the observer to each img and observe
+  lazyimages.forEach((img)=>{
+    observer.observe(img);
+  });
+}
+
 //header component
 export function MyHeader(){
   //navlink active indicator and style selector
@@ -17,16 +44,18 @@ export function MyHeader(){
     <div className='headercontainer'>
       <header className='header'>
         <a className='title' href='/githubpages'>Frank's Profile</a>
+          <nav>
             <ul className='header_list'>
               <li><NavLink className={getActive} to='/githubpages'>About</NavLink></li>
               <li><NavLink className={getActive} to='/employment'>Employment</NavLink></li>        
               <li><NavLink className={getActive} to='/education'>Education</NavLink></li>     
               <li>
-                <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
+                <button id='themebutton' title='Change Theme' className='sunbutton' onClick={handleThemeToggle}>
                   <img aria-label='theme togglebutton' className='sunimg' src={images.sun} alt='Toggle Theme'></img>
                 </button>
               </li>
             </ul>
+          </nav>
       </header>
     </div>
   )
@@ -49,7 +78,7 @@ export function MobileNav(){
               <NavLink className={getActive} to='/employment'>Employment</NavLink>
               <NavLink className={getActive} to='/education'>Education</NavLink>
               <div className='mobile_navline'></div>
-              <button id='themebutton' className='sunbutton' onClick={handleThemeToggle}>
+              <button id='themebutton' title='Change Theme' className='sunbutton' onClick={handleThemeToggle}>
                   <img aria-label='theme togglebutton' className='sunimg2' src={images.sun} alt='Toggle Theme'></img>
               </button>
             </div>

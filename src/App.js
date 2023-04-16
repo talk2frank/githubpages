@@ -9,13 +9,23 @@
  */
 
 import './App.css';
-import MyFooter, {MobileNav, MyHeader} from './components/components';
-import { Route,Routes } from 'react-router-dom';
+import { MyFooter, MobileNav, MyHeader, lazyImages } from './components/components';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './components/home';
 import Education from './components/education';
 import Employment from './components/employment';
+import { useEffect } from 'react';
+
 
 function App() {
+
+
+  //adds lazy loading for images for each route
+  let location = useLocation();
+
+  useEffect(() => {
+    lazyImages();
+  },[location]);
 
   return (
       <div className="App">
@@ -36,6 +46,9 @@ function App() {
         <MyFooter/>
       </div>
   );
+
+  
+
 };
 
 
