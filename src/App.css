@@ -307,13 +307,13 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   margin-bottom: 4px;
   padding: 4px;
-  height: 98vh;
+  
 }
 
 
 .Banner-profilepic {
-  height: calc(100px + 20vmin);
-  max-height: 200px;
+  height: calc(50px + 20vmin);
+  max-height: 150px;
   pointer-events: none;
 }
 
@@ -334,16 +334,10 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
 }
 
-.title{
-  font-family:var(--header-font);
-  font-weight:500;
-  font-size: var(--lrg-font-size);
-}
-
 .Banner-title{
   font-family:var(--header-font);
   font-weight:500;
-  font-size: 3rem;
+  font-size: 2rem;
   color:var(--blue-colour);
   transition: color 1s;
 }
@@ -362,7 +356,8 @@ body::-webkit-scrollbar-thumb {
   flex-direction: row;
   justify-content:center;
   align-items: center;
-  height: 60px;
+  padding: 4px 0 4px 0;
+
   width: 100%;
   border-top: 1px solid var(--orange-colour);
 }

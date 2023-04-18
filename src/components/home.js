@@ -11,6 +11,7 @@ export function Home(){
     return(
     <div>
         <MyBanner string={bannertext}></MyBanner>
+        <hr></hr>
         <Profile data={profileData}></Profile>
         
     </div>

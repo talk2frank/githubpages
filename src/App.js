@@ -20,9 +20,10 @@ import { useEffect } from 'react';
 function App() {
 
 
-  //adds lazy loading for images for each route
+  //location route update for lazy loading
   let location = useLocation();
 
+  //adds lazy loading for app images
   useEffect(() => {
     lazyImages();
   },[location]);
