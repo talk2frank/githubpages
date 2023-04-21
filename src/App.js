@@ -20,13 +20,23 @@ import { useEffect } from 'react';
 function App() {
 
 
-  //location route update for lazy loading
+  //location route update for lazy loading each time route changes
   let location = useLocation();
 
   //adds lazy loading for app images
   useEffect(() => {
     lazyImages();
   },[location]);
+
+  //scrolls to top on each route change
+  useEffect(() => {
+    const restore = 'scrollRestoration' in window.history
+    if (restore) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, [location]);
+
 
   return (
       <div className="App">
