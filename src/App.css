@@ -36,6 +36,7 @@
 
 body{
   background-color: var(--main-colour);
+  overflow-x: hidden;
 }
 
 /*General Styling*/
