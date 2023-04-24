@@ -105,7 +105,7 @@ export function Contacts(){
   
   return(
       <article id='contact' className='contacts'>
-        <h1>Contact Information</h1>
+        <h3>Contact Information</h3>
         <ul className="contactlist">
           <ContactItem link={email}></ContactItem>
           <ContactItem link={linkedin}></ContactItem>

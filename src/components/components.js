@@ -8,16 +8,17 @@
 import images from '../images/imgindex.js';
 import { NavLink } from 'react-router-dom';
 
+
 //lazy loading for images
 export function lazyImages(){
   //select any images with class of lazy -- 
   const lazyimages = document.querySelectorAll('.lazy');
   //int observer object takes items and itself
-  const observer = new IntersectionObserver((items,observer) =>{
+  const observer = new IntersectionObserver((entries,observer) =>{
     //checks each item, if intersecting visisble screen
-    items.forEach(item=>{
-      if(item.isIntersecting){
-      let img = item.target
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+      let img = entry.target
       //take src from data-src attribute and add to src (load image)
       img.src = img.dataset.src;
       //change from loading to loaded css
@@ -33,7 +34,36 @@ export function lazyImages(){
   lazyimages.forEach((img)=>{
     observer.observe(img);
   });
+};
+
+//function to apply fade items into view aninmation
+export function animate() {
+//selector to all fade in elements
+const animate = document.querySelectorAll('.card');
+
+//options for observer
+const animoptions = {
+  threshhold:0.5,
+  rootMargin: "0px 0px -100px 0px"
 }
+
+//
+const observer = new IntersectionObserver((entries,observer)=>{
+  
+  entries.forEach(entry =>{
+    if(entry.isIntersecting){
+      let item = entry.target;
+      item.classList.add('appear');
+      observer.unobserve(item);
+    };
+  });
+},animoptions);
+
+  animate.forEach((item)=>{
+    observer.observe(item);
+  });
+};
+
 
 //header component
 export function MyHeader(){

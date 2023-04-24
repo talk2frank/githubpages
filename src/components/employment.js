@@ -38,15 +38,13 @@ export function Emplist(){
 export function Job({job}){
     if (!job) return <div/>;
     return (
-      <article className='job'>
-        <li className='card' key={job.role}>
+        <li className='card from-left' key={job.role}>
           <h2>{job.role}</h2>
           <h5>{job.period}</h5>
           <h3>{job.employer}</h3>
           <h4>{job.skills}</h4>
           <p>{job.description}</p>  
         </li>
-      </article>
     );
   };
 

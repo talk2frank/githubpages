@@ -132,6 +132,8 @@ ul{
   letter-spacing: -0.03em;
 }
 
+/*lazy loading and animators*/
+
 .loading{
   filter:blur(15px) grayscale(100%);
 }
@@ -140,6 +142,27 @@ ul{
   filter:blur(0px) grayscale(0%);
   transition: 0.7s ease-in-out;
 }
+
+.from-left{
+  transform: translateX(-50%);
+}
+
+.from-right{
+  transform: translateX(+50%);
+}
+
+.from-left,.from-right{
+  opacity: 0;
+  transition: transform 400ms ease-in, opacity 400ms ease-in;
+}
+
+.from-left.appear,
+.from-right.appear {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+
 
 /* Scroll bar styling*/
 body::-webkit-scrollbar {

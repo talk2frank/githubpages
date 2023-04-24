@@ -9,7 +9,7 @@
  */
 
 import './App.css';
-import { MyFooter, MobileNav, MyHeader, lazyImages } from './components/components';
+import { MyFooter, MobileNav, MyHeader, lazyImages, animate} from './components/components';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Home from './components/home';
 import Education from './components/education';
@@ -26,7 +26,10 @@ function App() {
   //adds lazy loading for app images
   useEffect(() => {
     lazyImages();
+    animate();
   },[location]);
+
+
 
   //scrolls to top on each route change
   useEffect(() => {
@@ -34,7 +37,7 @@ function App() {
     if (restore) {
       window.history.scrollRestoration = 'manual';
     }
-    window.scrollTo(0, 0);
+    window.scrollTo({top:0,behavior: 'instant'});
   }, [location]);
 
 
